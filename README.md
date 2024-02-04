@@ -12,7 +12,7 @@ FoundPoetry (tentatively named) is a web app that enables users to create blacko
 - **Text Merging:** Combine lines or stanzas from different poems to create unique compositions.
 
 ## Development Stage
-- I am currently in the first phase of development. The above features are my end goal.
+- I am currently in the first phase of development and have begun basic styling, but no functionality yet. The above features are my end goal.
 
 ## APIS I am considering using
 - [poetryDB API](https://poetrydb.org/index.html)
