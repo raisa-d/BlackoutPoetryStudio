@@ -1,0 +1,203 @@
+/* CSS reset
+http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* DEFAULT STYLES */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    margin: 3rem;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 2.8rem;
+}
+
+h6 {
+    font-size: 2.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+}
+
+/* LAYOUT */
+
+/* header layout */
+header {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    align-items:center;
+}
+
+header > p {
+    width: 60rem;
+    text-align:center;
+    padding: 2rem 0 3rem 0;
+}
+
+/* poem text box layout */
+#textbox-container {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+}
+#poem-textbox {
+    /* may use different units that don't depend on viewport */
+    height:80vh;
+    width: 50vw;
+    margin: 3rem;
+    min-width: 60rem;
+}
+
+/* layout for controls */
+#controls-section {
+    padding:3rem;
+}
+
+#controls-container {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+}
+
+#search-area {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* ADDITIONAL STYLING */
+h1 {
+    color: #7148fc;
+}
+
+#poem-textbox {
+    background:-moz-radial-gradient(#fff, #b8bfc6);
+    background: -webkit-radial-gradient(#fff, #b8bfc6);
+    background: radial-gradient(#fff, #b8bfc6);
+    border: 10px solid #1E293B;
+    border-radius:3.5rem;
+}
+
+/* styling the words inside the textbox */
+#ogPiece {
+    margin: 2rem;
+    font-size: 2.2rem;
+    color: #1E293B;
+}
+
+/* STYLING CONTROLS AREA */
+#controls-section {
+    background:#7148FC;
+    color:white;
+}
+
+#controls-section, button, #search-area, #search {
+    border-radius:15px;
+}
+
+/* buttons */
+button, #search-area {
+    padding: 1.5rem;
+    min-width: 15rem;
+    font-size:2rem;
+    border-radius: 15px;
+    border:none;
+    color:#1E293B;
+}
+
+button:hover {
+    font-weight:900;
+    font-size:2.4rem;
+}
+
+/* search area styling */
+#search-area {
+    background:#fff;
+}
+
+#search {
+    border:2px solid #7148FC;
+    padding:1rem;
+    margin-top:1rem;
+    width: 25rem;
+    height:3rem;
+}
