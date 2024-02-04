@@ -174,14 +174,18 @@ h1 {
     border-radius:15px;
 }
 
+#controls-container li {
+    margin: 0.5rem;
+}
+
 /* buttons */
 button, #search-area {
     padding: 1.5rem;
-    min-width: 15rem;
     font-size:2rem;
     border-radius: 15px;
     border:none;
     color:#1E293B;
+    background:#fff;
 }
 
 button:hover {
@@ -191,13 +195,12 @@ button:hover {
 
 /* search area styling */
 #search-area {
-    background:#fff;
+    text-align:center;
 }
 
 #search {
     border:2px solid #7148FC;
     padding:1rem;
     margin-top:1rem;
-    width: 25rem;
     height:3rem;
 }
