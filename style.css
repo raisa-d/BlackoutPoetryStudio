@@ -89,11 +89,15 @@ h1, h2, h3, h4, h5, h6 {
 /* LAYOUT */
 
 /* main section */
-#main {
+#main, #main-container {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
+}
+
+#main-container {
+    justify-content: center;
 }
 
 /* header/nav layout */
@@ -121,10 +125,11 @@ header > p {
     display: flex;
     justify-content: center;
 }
+
 #poem-textbox {
     /* may use different units that don't depend on viewport */
     min-height: 80vh;
-    width: 60vw;
+    max-width: 50vw;
     margin-left: 4rem;
     min-width: 60rem;
 }
