@@ -5,7 +5,7 @@ FoundPoetry (tentatively named) is a web app that enables users to create blacko
 ## Features
 
 - **Random Poem:** Generate a random poem for creative inspiration.
-- **Search Functionality:** Find specific poems using search queries.
+- **Search Functionality:** Find specific poems using search queries. Including the ability to choose the line count of the poem
 - **Set Custom Text:** Add text of your own to base your found poem off of.
 - **Blackout Poetry Editor:** Craft your blackout poetry with an intuitive text editor.
 - **Save and Share:** Save your creations and share them on social media.
