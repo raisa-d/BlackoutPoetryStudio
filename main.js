@@ -5,6 +5,7 @@ const url = `https://poetrydb.org/random/1/author,title,linecount,lines`
 // event listener to get a random poem on button click
 document.querySelector('#get-random').addEventListener('click', randomPoem)
 
+// function to get & display a random poem
 function randomPoem() {
     fetch(url)
     .then(res => res.json()) // parse response as JSON
@@ -29,3 +30,12 @@ function randomPoem() {
         console.log(`error ${err}`)
     });
 }
+
+// function to style words when user hovers over them
+function hover() {
+    // 
+}
+
+// function to add border when user selects words
+
+// function to blackout rest of poem
