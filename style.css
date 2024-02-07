@@ -114,7 +114,7 @@ header > p {
 #poem-textbox {
     /* may use different units that don't depend on viewport */
     min-height: 50rem;
-    min-width: 50rem;
+    max-width: 60rem;
     margin-left: 4rem;
 }
 
