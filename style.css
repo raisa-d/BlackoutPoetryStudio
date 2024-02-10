@@ -152,13 +152,18 @@ h1 {
     background: radial-gradient(#fff, #b8bfc6);
     border: 10px solid #1E293B;
     border-radius:3.5rem;
+    min-width:40dvw;
 }
 
 /* styling the words inside the textbox */
-#ogPiece {
+#poem {
     margin: 2rem;
     font-size: 2.2rem;
     color: #1E293B;
+}
+
+#poem p {
+    margin-bottom: 0.5rem;
 }
 
 /* STYLING CONTROLS AREA */
@@ -205,4 +210,15 @@ button {
     padding:1rem;
     margin-top:1rem;
     height:3rem;
+}
+
+/* styling hovered words */
+.word.hovered {
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.selected-word {
+    border: 2px solid #7148FC;
+    cursor: pointer;
 }
