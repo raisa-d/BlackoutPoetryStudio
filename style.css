@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* main section */
 #main-container {
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 /* header/nav layout */
@@ -101,7 +101,7 @@ header {
 }
 
 header > p {
-    width: 60rem;
+    width: 50dvw;
     text-align:center;
     padding: 2rem 0 3rem 0;
 }
@@ -124,7 +124,7 @@ header > p {
 }
 
 /* FLEXBOX */
-#controls-container, #search-area, #main, #main-container, header, #textbox-container {
+#controls-container, #search-area, #main, #main-container, header, #textbox-container, #custom-text {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -136,7 +136,7 @@ header > p {
     align-items:center;
 }
 
-#search-area {
+#search-area, #custom-text {
     flex-direction:column;
     align-items:center;
 }
@@ -144,6 +144,7 @@ header > p {
 /* ADDITIONAL STYLING */
 h1 {
     color: #7148fc;
+    text-align:center;
 }
 
 #poem-textbox {
@@ -172,7 +173,7 @@ h1 {
     color:white;
 }
 
-#controls-section, button, #search-area, #search {
+#controls-section, button, #search-area, #search, #custom-text, #custom {
     border-radius:15px;
 }
 
@@ -181,7 +182,7 @@ h1 {
 }
 
 /* buttons */
-button, #search-area {
+button, #search-area, #custom-text {
     padding: 1.5rem;
     font-size:2rem;
     border-radius: 15px;
@@ -201,11 +202,11 @@ button {
 }
 
 /* search area styling */
-#search-area {
+#search-area, #custom-text {
     text-align:center;
 }
 
-#search {
+#search, #custom {
     border:2px solid #7148FC;
     padding:1rem;
     margin-top:1rem;
