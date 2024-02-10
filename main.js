@@ -7,6 +7,9 @@ let poemBox = document.querySelector('#poem')
 // event listener to get a random poem on button click
 document.querySelector('#get-random').addEventListener('click', randomPoem)
 
+// event listener to reset
+document.querySelector('#reset').addEventListener('click', reset)
+
 // function to get & display a random poem
 function randomPoem() {
     fetch(url)
@@ -76,6 +79,10 @@ function selectWord() {
 }
 
 // function to blackout rest of poem
-function blackOut() {
+function blackout() {
     
+}
+
+function reset() {
+    poemBox.innerText = ''
 }
