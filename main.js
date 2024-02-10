@@ -8,7 +8,7 @@ let poemBox = document.querySelector('#poem')
 document.querySelector('#get-random').addEventListener('click', randomPoem)
 
 // event listener to reset
-document.querySelector('#reset').addEventListener('click', reset)
+document.querySelector('#reset').addEventListener('click', resetPoem)
 
 // function to get & display a random poem
 function randomPoem() {
@@ -80,9 +80,17 @@ function selectWord() {
 
 // function to blackout rest of poem
 function blackout() {
-    
+// implement blackout functionality here
 }
 
-function reset() {
-    poemBox.innerText = ''
+// function to reset the poem by removing selected words
+function resetPoem() {
+    // select all word spans in poem
+    const wordSpans = document.querySelectorAll('#poem .word');
+
+    // loop through array of word spans
+    wordSpans.forEach(wordSpan => {
+        // remove 'selected-word' from each one
+        wordSpan.classList.remove('selected-word');
+    });
 }
