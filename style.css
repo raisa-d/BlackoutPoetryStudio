@@ -124,7 +124,7 @@ header > p {
 }
 
 /* FLEXBOX */
-#controls-container, #search-area, #main, #main-container, header, #textbox-container, #custom-text {
+#controls-container, #search-area, #main, #main-container, header, #textbox-container, #custom-text, #save-share {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -201,7 +201,7 @@ button {
     min-height: 6rem;
 }
 
-/* search area styling */
+/* search area and custom text styling */
 #search-area, #custom-text {
     text-align:center;
 }
