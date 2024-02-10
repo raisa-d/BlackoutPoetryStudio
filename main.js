@@ -7,8 +7,11 @@ let poemBox = document.querySelector('#poem')
 // event listener to get a random poem on button click
 document.querySelector('#get-random').addEventListener('click', randomPoem)
 
-// event listener to reset
+// event listener to reset poem
 document.querySelector('#reset').addEventListener('click', resetPoem)
+
+// event listener to black out poem
+document.querySelector('#blackout').addEventListener('click', blackout)
 
 // function to get & display a random poem
 function randomPoem() {
@@ -65,7 +68,7 @@ function addEventListenersToWords() {
 
 function hover() {
     // hover only if not already selected
-    if (!this.classList.contains('selected-word')) {
+    if (!this.classList.contains('selected-word') && !this.classList.contains('blackedOut')) {
         this.classList.add('hovered');
     }
 }
@@ -75,12 +78,19 @@ function unhover() {
 }
 
 function selectWord() {
-    this.classList.toggle('selected-word')
+    if (!this.classList.contains('blackedOut')) {
+        this.classList.toggle('selected-word')
+    }
 }
 
 // function to blackout rest of poem
 function blackout() {
-// implement blackout functionality here
+    const wordSpans = document.querySelectorAll('#poem .word');
+
+    document.querySelector('#poem-textbox').classList.add('blackedOut')
+
+    // if the wordSpan is not a selected word, black it out, otherwise let it be seen
+    wordSpans.forEach(wordSpan => !wordSpan.classList.contains('selected-word') ? wordSpan.classList.add('blackedOut') : wordSpan.classList.add('selected-during-blackout'));
 }
 
 // function to reset the poem by removing selected words
@@ -92,5 +102,9 @@ function resetPoem() {
     wordSpans.forEach(wordSpan => {
         // remove 'selected-word' from each one
         wordSpan.classList.remove('selected-word');
+        wordSpan.classList.remove('blackedOut');
+        wordSpan.classList.remove('selected-during-blackout');
     });
+
+    document.querySelector('#poem-textbox').classList.remove('blackedOut');
 }
