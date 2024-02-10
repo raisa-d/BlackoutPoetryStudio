@@ -152,6 +152,7 @@ h1 {
     background: radial-gradient(#fff, #b8bfc6);
     border: 10px solid #1E293B;
     border-radius:3.5rem;
+    min-width:40dvw;
 }
 
 /* styling the words inside the textbox */
@@ -159,7 +160,10 @@ h1 {
     margin: 2rem;
     font-size: 2.2rem;
     color: #1E293B;
-    min-width: 30dvw;
+}
+
+#poem p {
+    margin-bottom: 0.5rem;
 }
 
 /* STYLING CONTROLS AREA */
@@ -188,8 +192,7 @@ button, #search-area {
 
 button:hover {
     font-weight:900;
-    color: #fff;
-    cursor:pointer;
+    font-size:2.4rem;
 }
 
 button {
@@ -209,12 +212,13 @@ button {
     height:3rem;
 }
 
-/* styling for hovered words */
+/* styling hovered words */
 .word.hovered {
     font-weight: 900;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .selected-word {
     border: 2px solid #7148FC;
+    cursor: pointer;
 }
