@@ -1,6 +1,8 @@
 // /<input field>/<search term>[;<search term>][..][:<search type>][/<output field>][,<output field>][..][.<format>]
 
 const url = `https://poetrydb.org/random/1/author,title,linecount,lines`
+// variable for the poem textbox
+let poemBox = document.querySelector('#poem')
 
 // event listener to get a random poem on button click
 document.querySelector('#get-random').addEventListener('click', randomPoem)
@@ -11,9 +13,6 @@ function randomPoem() {
     .then(res => res.json()) // parse response as JSON
     .then(data => {
         console.log(data);
-
-        // variable for the poem textbox
-        let poemBox = document.querySelector('#ogPiece')
 
         // reset the box to be empty each time they want to get a new random poem
         poemBox.innerText = ''
@@ -31,10 +30,11 @@ function randomPoem() {
     });
 }
 
+// function to add event listeners to each word
+
 // function to style words when user hovers over them
-function hover() {
-    // 
-}
+
+// function to unhover words
 
 // function to add border when user selects words
 

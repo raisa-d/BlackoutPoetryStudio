@@ -155,10 +155,11 @@ h1 {
 }
 
 /* styling the words inside the textbox */
-#ogPiece {
+#poem {
     margin: 2rem;
     font-size: 2.2rem;
     color: #1E293B;
+    min-width: 30dvw;
 }
 
 /* STYLING CONTROLS AREA */
@@ -187,7 +188,8 @@ button, #search-area {
 
 button:hover {
     font-weight:900;
-    font-size:2.4rem;
+    color: #fff;
+    cursor:pointer;
 }
 
 button {
@@ -205,4 +207,14 @@ button {
     padding:1rem;
     margin-top:1rem;
     height:3rem;
+}
+
+/* styling for hovered words */
+.word.hovered {
+    font-weight: 900;
+    cursor:pointer;
+}
+
+.selected-word {
+    border: 2px solid #7148FC;
 }
