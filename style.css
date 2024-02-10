@@ -114,7 +114,6 @@ header > p {
 #poem-textbox {
     /* may use different units that don't depend on viewport */
     min-height: 50rem;
-    max-width: 60rem;
     margin-left: 4rem;
 }
 
@@ -148,12 +147,9 @@ h1 {
 }
 
 #poem-textbox {
-    /* background:-moz-radial-gradient(#fff, #b8bfc6);
-    background: -webkit-radial-gradient(#fff, #b8bfc6);
-    background: radial-gradient(#fff, #b8bfc6); */
     border: 10px solid #1E293B;
     border-radius:3rem;
-    min-width:40dvw;
+    width:60dvw;
 }
 
 /* styling the words inside the textbox */
@@ -236,4 +232,21 @@ button {
     background-color: #fff;
     padding: 0.2rem;
     border: none;
+}
+
+/* trying to make it responsive */
+@media all and (max-width: 748px) {
+    #poem-textbox {
+        width: 90dvw;
+        margin-left: 0;
+    }
+
+    header > p {
+        display:none;
+    }
+
+    /* hiding controls --> *need to make it so you can either dropdown a menu of those options or display it in a smaller way */
+    #controls-section {
+        display:none;
+    }
 }
