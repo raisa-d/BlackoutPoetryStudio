@@ -32,4 +32,4 @@ Blackout Poetry Maker (tentatively named) is a web app that enables users to cre
 - [Datamuse API](https://www.datamuse.com/api/)
 - [WordsAPI](https://www.wordsapi.com/)
 
-Live Demo [Here](https://raisa-d.github.io/FoundPoetry/)
+Live Demo [Here](https://raisa-d.github.io/BlackoutPoetryMaker/)
