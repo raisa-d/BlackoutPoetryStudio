@@ -1,6 +1,6 @@
-# FoundPoetry
+# Blackout Poetry Maker
 
-FoundPoetry (tentatively named) is a web app that enables users to create blackout poetry by merging and manipulating text from various sources.
+Blackout Poetry Maker (tentatively named) is a web app that enables users to create blackout poetry by merging and manipulating text from various sources.
 
 ## Features
 
