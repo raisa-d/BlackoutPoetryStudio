@@ -4,33 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackout Poetry Maker</title>
+<!-- stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Blackout Poetry Maker</h1>
-        <p>Blackout (aka erasure or redacted) poetry is a type of found poetry where a poet makes something new from something pre-existing ("found").</p>
-        <!-- <div id="instructions">
-            <span>Instructions</span>
-            <ol>
-                <li>
-                    First, get a pre-existing poem to work with. Either get a random one, enter custom text to work with, or search for a base poem.
-                </li>
-                <li>
-                    Then, build the poem by clicking on the words you want to keep.
-                </li>
-                <li>
-                    When you are done, click 'blackout.'
-                </li>
-                <li>
-                    Share or save your poem.
-                </li>
-            </ol>
-        </div> -->
+        <!-- deciding whether to remove this section 
+            <p>Blackout (aka erasure or redacted) poetry is a type of found poetry where a poet makes something new from something pre-existing ("found").</p> -->
     </header>
     <div id="main-container">
         <section id="main">
             <section id="controls-section">
+                <div id="instructions-container">
+                    <p>
+                        First, get a pre-existing poem to work with. Either get a random one, enter custom text, or search for a base poem.
+                    </p>
+                    <p>
+                        Then, build the poem by clicking on the words you want to keep.
+                    </p>
+                    <p>
+                        When you are done, click 'blackout.'
+                    </p>
+                    <p>
+                        Share or save your poem.
+                    </p>
+                </div>
                 <ul id="controls-container">
                     <li>
                         <button id="get-random">Get Random Text</button>
@@ -41,7 +40,7 @@
                     </li>
                     <li id="custom-text">
                         <label for="custom">Enter Custom Text</label>
-                        <input disabled id="custom" type="text">
+                        <input id="custom" type="text">
                     </li>
                     <li>
                         <button id="blackout">Blackout</button>
@@ -49,6 +48,12 @@
                     <li>
                         <button id="reset">Reset</button>
                     </li>
+                    <!-- <li>
+                        <button class="save-share">Save</button>
+                    </li>
+                    <li>
+                        <button class="save-share">Share</button>
+                    </li> -->
                 </ul>
             </section>
             <div id="textbox-container">
@@ -58,17 +63,6 @@
             </div>
         </section>
     </div>
-    <!-- buttons to save and share 
-        <div id="save-share">
-        <ul>
-            <li>
-                <button>Save</button>
-            </li>
-            <li>
-                <button>Share</button>
-            </li>
-        </ul>
-    </div> -->
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

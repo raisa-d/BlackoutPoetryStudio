@@ -56,6 +56,7 @@ html {
 body {
     font-size: 2rem;
     margin: 3rem;
+    font-family: 'Times New Roman', Arial;
 }
 
 h1 {
@@ -97,13 +98,7 @@ h1, h2, h3, h4, h5, h6 {
 header {
     -ms-flex-direction: column;
     flex-direction: column;
-    align-items:center;
-}
-
-header > p {
-    width: 50dvw;
-    text-align:center;
-    padding: 2rem 0 3rem 0;
+    /* border: 2px solid blue; */
 }
 
 /* poem text box layout */
@@ -112,14 +107,16 @@ header > p {
 }
 
 #poem-textbox {
-    /* may use different units that don't depend on viewport */
     min-height: 50rem;
-    margin-left: 4rem;
 }
 
 /* layout for controls */
-#controls-section {
+#controls-section:not('#instructions-container') {
     width: 20rem;
+}
+
+#instructions-container {
+    width: 30rem;
 }
 
 /* FLEXBOX */
@@ -133,6 +130,7 @@ header > p {
 #controls-container {
     flex-direction: column;
     align-items:center;
+    color: #fff;
 }
 
 #search-area, #custom-text {
@@ -140,10 +138,15 @@ header > p {
     align-items:center;
 }
 
+#search-area {
+    width:17rem;
+}
+
 /* ADDITIONAL STYLING */
 h1 {
     color: #7148fc;
     text-align:center;
+    margin-bottom:2rem;
 }
 
 #poem-textbox {
@@ -164,17 +167,18 @@ h1 {
 }
 
 /* STYLING CONTROLS AREA */
-#controls-section {
-    /* background:#7148FC; */
-    color:white;
-}
-
 #controls-section, button, #search-area, #search, #custom-text, #custom {
     border-radius:15px;
 }
 
 #controls-container li {
-    margin: 0.5rem 0 0.5rem 0;
+    margin: 0.5rem 0;
+}
+
+/* instructions layout */
+#instructions-container p {
+    margin: 0.5rem 0 1rem 4.5rem;
+    width: 25rem;
 }
 
 /* buttons */
@@ -196,6 +200,11 @@ button:hover {
 button {
     width: 20rem;
     min-height: 6rem;
+}
+
+/* save and share buttons */
+.save-share {
+    background: #1E293B;
 }
 
 /* search area and custom text styling */
@@ -234,25 +243,17 @@ button {
     border: none;
 }
 
+
+
 /* trying to make it responsive */
-@media all and (max-width: 748px) {
-    #poem-textbox {
-        width: 90dvw;
-        margin-left: 0;
+@media all and (max-width: 730px) {
+    button, #search-area, #custom-text, #search, #custom {
+        width: 12rem;
     }
-
-    header > p {
-        display:none;
-    }
-
-    /* hiding controls --> *need to make it so you can either dropdown a menu of those options or display it in a smaller way */
-    /* #controls-section {
-        display:none;
-    } */
 }
 
 @media all and (max-width: 980px) {
-    #poem-textbox {
+    /* #poem-textbox {
         width:60dwh;
-    }
+    } */
 }
