@@ -110,3 +110,5 @@ function resetPoem() {
 
     document.querySelector('#poem-textbox').classList.remove('blackedOut');
 }
+
+// event listener for clicking the next arrow and displaying custom text on the DOM

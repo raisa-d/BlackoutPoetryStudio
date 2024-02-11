@@ -87,7 +87,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* LAYOUT */
-
 /* main section */
 #main-container {
     justify-content: space-evenly;
@@ -198,6 +197,31 @@ button {
     min-height: 6rem;
 }
 
+#custom-text textarea {
+    width: 14rem;
+}
+
+#custom-text {
+    width: 17rem;
+}
+
+#custom:focus {
+    height:10rem;
+}
+
+/* styling next arrow to submit custom text when its ready*/
+#arrow {
+    margin-top:1rem;
+    cursor: pointer;
+    background:#1E293B;
+    padding:0.8rem;
+    border-radius: 30%;
+}
+
+#arrow:hover {
+    background:#28364d;
+}
+
 /* search area and custom text styling */
 #search-area, #custom-text {
     text-align:center;
@@ -234,7 +258,7 @@ button {
     border: none;
 }
 
-/* trying to make it responsive */
+/* MEDIA QUERIES */
 @media all and (max-width: 748px) {
     #poem-textbox {
         width: 90dvw;
@@ -256,3 +280,4 @@ button {
         width:60dwh;
     }
 }
+
