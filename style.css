@@ -149,7 +149,7 @@ h1 {
 #poem-textbox {
     border: 10px solid #1E293B;
     border-radius:3rem;
-    width:60dvw;
+    width:45dvw;
 }
 
 /* styling the words inside the textbox */
@@ -246,7 +246,13 @@ button {
     }
 
     /* hiding controls --> *need to make it so you can either dropdown a menu of those options or display it in a smaller way */
-    #controls-section {
+    /* #controls-section {
         display:none;
+    } */
+}
+
+@media all and (max-width: 980px) {
+    #poem-textbox {
+        width:60dwh;
     }
 }
