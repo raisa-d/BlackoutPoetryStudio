@@ -25,6 +25,8 @@ function randomPoem() {
         // reset the box to be empty each time they want to get a new random poem
         poemBox.innerText = ''
 
+        resetPoem()
+
         // if the poem is less then 100 lines
         if (data[0].linecount < 100) {
             // put each poem line within a paragraph element
