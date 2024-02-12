@@ -4,6 +4,9 @@ const url = `https://poetrydb.org/random/1/author,title,linecount,lines`
 // variable for the poem textbox
 let poemBox = document.querySelector('#poem')
 
+// boolean to track whether the poem is blacked out or not
+poemIsBlackedOut = false;
+
 // event listener to get a random poem on button click
 document.querySelector('#get-random').addEventListener('click', randomPoem)
 
@@ -22,6 +25,8 @@ function randomPoem() {
     .then(res => res.json()) // parse response as JSON
     .then(data => {
         console.log(data);
+
+        poemIsBlackedOut = false;
 
         const poemLines = data[0].lines
 
@@ -73,10 +78,9 @@ function addEventListenersToWords() {
 
 function hover() {
     // make words bold on hover only if not already selected
-    if (!this.classList.contains('selected-word' || this.classList.contains('blackedOut'))) {
+    if (!this.classList.contains('selected-word') && !poemIsBlackedOut) {
         this.classList.add('hovered');
     }
-    // && !this.classList.contains('blackedOut')
 }
 
 function unhover() {
@@ -97,10 +101,14 @@ function blackout() {
 
     // if the wordSpan is not a selected word, black it out, otherwise let it be seen
     wordSpans.forEach(wordSpan => !wordSpan.classList.contains('selected-word') ? wordSpan.classList.add('blackedOut') : wordSpan.classList.add('selected-during-blackout'));
+
+    poemIsBlackedOut = true;
 }
 
 // function to reset the poem by removing selected words
 function resetPoem() {
+    poemIsBlackedOut = false;
+
     // select all word spans in poem
     const wordSpans = document.querySelectorAll('#poem .word');
 
