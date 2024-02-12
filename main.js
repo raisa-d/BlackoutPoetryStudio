@@ -13,6 +13,9 @@ document.querySelector('#reset').addEventListener('click', resetPoem)
 // event listener to black out poem
 document.querySelector('#blackout').addEventListener('click', blackout)
 
+// event listener for clicking the next arrow
+document.querySelector('#arrow').addEventListener('click', useCustomText)
+
 // function to get & display a random poem
 function randomPoem() {
     fetch(url)
@@ -69,10 +72,11 @@ function addEventListenersToWords() {
 }
 
 function hover() {
-    // hover only if not already selected
-    if (!this.classList.contains('selected-word') && !this.classList.contains('blackedOut')) {
+    // make words bold on hover only if not already selected
+    if (!this.classList.contains('selected-word' || this.classList.contains('blackedOut'))) {
         this.classList.add('hovered');
     }
+    // && !this.classList.contains('blackedOut')
 }
 
 function unhover() {
@@ -111,4 +115,19 @@ function resetPoem() {
     document.querySelector('#poem-textbox').classList.remove('blackedOut');
 }
 
-// event listener for clicking the next arrow and displaying custom text on the DOM
+function useCustomText() {
+    // get value out of input
+    let customBase = document.querySelector('#custom').value.trim();
+
+    // get an array of each word
+    let customWords = customBase.split(' ');
+
+    // add spans to each word
+    let customHTML = customWords.map(w => `<span class="word">${w}</span>`).join(' ');
+
+    // inert the customHTML into the poemBox
+    poemBox.innerHTML = `<p>${customHTML}</p>`;
+
+    // call add event listeners function so that user can interact with words
+    addEventListenersToWords();
+}
