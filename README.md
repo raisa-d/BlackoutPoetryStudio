@@ -18,14 +18,14 @@ Blackout Poetry Maker (tentatively named) is a web app that enables users to cre
   - select which words you want to be in your poem
   - reset the poem so no words are selected anymore
   - black out the rest of the words to create the poem
+  - create a blackout poem using custom text
 
 ## Next Steps/Features to Implement
 1. Save progress in local storage so it doesn't delete user progress if they refresh it
 2. Search functionality to get poem by searching the database by keyword, author, etc.
-3. Create a blackout poem using custom text
-4. Save and share your poem
-5. Add instructions for user. (Possibly something collapsible where they can choose to show or hide the instructions.)
-6. Styling & making it responsive
+3. Save and share your poem
+4. Add instructions for user. (Possibly something collapsible where they can choose to show or hide the instructions.)
+5. Styling & making it responsive
 
 ## APIS I am considering using
 - [poetryDB API](https://poetrydb.org/index.html)
