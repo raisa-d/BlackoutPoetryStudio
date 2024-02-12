@@ -2,7 +2,9 @@
 
 const url = `https://poetrydb.org/random/1/author,title,linecount,lines`
 // variable for the poem textbox
-let poemBox = document.querySelector('#poem')
+const poemBox = document.querySelector('#poem')
+
+const poemContainer = document.querySelector('#poem-textbox')
 
 // boolean to track whether the poem is blacked out or not
 poemIsBlackedOut = false;
@@ -18,6 +20,9 @@ document.querySelector('#blackout').addEventListener('click', blackout)
 
 // event listener for clicking the next arrow
 document.querySelector('#arrow').addEventListener('click', useCustomText)
+
+// event listener to the save as image
+document.querySelector('#save').addEventListener('click', savePoemAsImage);
 
 // function to get & display a random poem
 function randomPoem() {
@@ -97,7 +102,7 @@ function selectWord() {
 function blackout() {
     const wordSpans = document.querySelectorAll('#poem .word');
 
-    document.querySelector('#poem-textbox').classList.add('blackedOut')
+    poemContainer.classList.add('blackedOut')
 
     // if the wordSpan is not a selected word, black it out, otherwise let it be seen
     wordSpans.forEach(wordSpan => !wordSpan.classList.contains('selected-word') ? wordSpan.classList.add('blackedOut') : wordSpan.classList.add('selected-during-blackout'));
@@ -120,7 +125,7 @@ function resetPoem() {
         wordSpan.classList.remove('selected-during-blackout');
     });
 
-    document.querySelector('#poem-textbox').classList.remove('blackedOut');
+    poemContainer.classList.remove('blackedOut');
 }
 
 function useCustomText() {
@@ -138,4 +143,12 @@ function useCustomText() {
 
     // call add event listeners function so that user can interact with words
     addEventListenersToWords();
+}
+
+// **Function to save the poem as an image
+function savePoemAsImage() {
+    if (poemIsBlackedOut) {
+        // save functionality here
+        console.log('you are trying to save your poem as an image')
+    }
 }

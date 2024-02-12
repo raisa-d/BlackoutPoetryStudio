@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -89,8 +90,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* LAYOUT */
 /* main section */
-#main-container {
+/* #main-container {
     justify-content: space-evenly;
+} */
+
+#main {
+    justify-content: center;
 }
 
 /* header/nav layout */
@@ -105,10 +110,6 @@ header {
     justify-content: center;
 }
 
-#poem-textbox {
-    min-height: 50rem;
-}
-
 /* layout for controls */
 #controls-section:not('#instructions-container') {
     width: 20rem;
@@ -119,7 +120,7 @@ header {
 }
 
 /* FLEXBOX */
-#controls-container, #search-area, #main, #main-container, header, #textbox-container, #custom-text, #save-share {
+#controls-container, #search-area, #main, header, #textbox-container, #custom-text, #save-share {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -151,7 +152,7 @@ h1 {
 #poem-textbox {
     border: 10px solid #1E293B;
     border-radius:3rem;
-    width:45dvw;
+    width:35dvw;
 }
 
 /* styling the words inside the textbox */
@@ -269,7 +270,13 @@ button {
 
 
 
-/* trying to make it responsive */
+/* media queries */
+@media all and (max-width:950px) {
+    #poem-textbox {
+        width: 45dvw;
+    }
+}
+
 @media all and (max-width: 730px) {
 
     #instructions-container {
@@ -281,4 +288,34 @@ button {
         flex: 1
     }
 
+    #poem-textbox {
+        width: 50dvw;
+    }
+
+}
+
+@media all and (max-width:575px) {
+    button {
+        width: 11rem;
+    }
+
+    #search-area, #custom-text {
+        width: 8rem;
+    }
+
+    #search, #custom-text > textarea {
+        width: 8rem;
+    }
+
+    #poem-textbox {
+        width: 65dvw;
+    }
+
+    #main {
+        justify-content: space-around;
+    }
+
+    #controls-section, #textbox-container {
+        flex: 1;
+    }
 }
