@@ -24,8 +24,7 @@ Blackout Poetry Maker (tentatively named) is a web app that enables users to cre
 1. Save progress in local storage so it doesn't delete user progress if they refresh it
 2. Search functionality to get poem by searching the database by keyword, author, etc.
 3. Save and share your poem
-4. Add instructions for user. (Possibly something collapsible where they can choose to show or hide the instructions.)
-5. Styling & making it responsive
+4. Styling & making it responsive
 
 ## APIS I am considering using
 - [poetryDB API](https://poetrydb.org/index.html)
