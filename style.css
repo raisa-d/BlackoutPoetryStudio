@@ -280,13 +280,5 @@ button {
         margin-right: 2rem;
         flex: 1
     }
-    #main-container {
-        justify-content: flex-start;
-    }
-}
 
-@media all and (427px) {
-    #main-container {
-        justify-content:space-around;
-    }
 }
