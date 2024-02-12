@@ -152,3 +152,6 @@ function savePoemAsImage() {
         console.log('you are trying to save your poem as an image')
     }
 }
+
+// NOTES
+// use something instead of innerHTML so users can't inject code
