@@ -54,10 +54,6 @@ html {
     font-size: 62.5%;
 }
 
-.hidden {
-    display: none;
-}
-
 body {
     font-size: 2rem;
     margin: 3rem 0;
@@ -92,11 +88,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
 }
 
-/* LAYOUT */
-/* main section */
-/* #main-container {
-    justify-content: space-evenly;
-} */
+.hidden {
+    display: none !important;
+}
 
 #main {
     justify-content: center;
@@ -106,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 header {
     -ms-flex-direction: column;
     flex-direction: column;
-    /* border: 2px solid blue; */
+    align-items:center;
 }
 
 /* poem text box layout */
@@ -117,6 +111,10 @@ header {
 /* layout for controls */
 #controls-section:not('#instructions-container') {
     width: 20rem;
+}
+
+#controls-section {
+    margin-right: 2rem;
 }
 
 #instructions-container {
@@ -143,16 +141,52 @@ header {
 }
 
 /* ADDITIONAL STYLING */
+
+/* header */
 h1 {
     color: #DDECDD;
     text-align:center;
-    margin:0 auto 2rem auto;
+    margin:0 auto 1rem auto;
     background: #2F2235;
     width: 40%;
     padding: 1rem;
     border-radius: 5px;
 }
 
+/* instructions */
+#instructions-title, #instructions-container p, #instructions-container li:not(:last-child) {
+    margin-bottom:1rem;
+}
+
+#info {
+    color: #523E5C;
+}
+
+#info:hover {
+    color: #8e9b8e;
+    cursor: pointer;
+}
+
+#instructions-container {
+    background: #ACBBAC;
+    color: #523E5C;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#instructions-container ol {
+    list-style-type:decimal;
+    width: 90%;
+}
+
+/* poem styling */
 #poem-textbox {
     border: 10px solid #2F2235;
     border-radius:3rem;
@@ -177,12 +211,6 @@ h1 {
 
 #controls-container li {
     margin: 0.5rem 0;
-}
-
-/* instructions layout */
-#instructions-container p {
-    margin: 0.5rem 0 1rem 4.5rem;
-    width: 25rem;
 }
 
 /* buttons */
@@ -302,11 +330,11 @@ button {
 
 #socials a {
     margin: 0 1rem;
-    color: #A6849D;
+    color: #8e9b8e;
 }
 
 #socials a:hover {
-    color: #ACBBAC;
+    color: #A6849D;
 }
 
 #copyright {
@@ -332,10 +360,6 @@ button {
 
 @media all and (max-width: 730px) {
 
-    #instructions-container {
-        display:none;
-    }
-
     #controls-container {
         margin-right: 2rem;
         flex: 1
@@ -348,21 +372,20 @@ button {
 }
 
 @media all and (max-width:575px) {
-    button {
-        width: 11rem;
+    #controls-section {
+        margin: 0
+    }
+    #search-area {
+        width: 16rem;
     }
 
-    #search-area, #custom-text {
+    #search {
         width: 8rem;
     }
 
-    #search, #custom-text > textarea {
-        width: 8rem;
-    }
-
-    #poem-textbox {
+    /* #poem-textbox {
         width: 65dvw;
-    }
+    } */
 
     #main {
         justify-content: space-around;

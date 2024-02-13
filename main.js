@@ -7,17 +7,16 @@ const poemContainer = document.querySelector('#poem-textbox')
 // boolean to track whether the poem is blacked out or not
 poemIsBlackedOut = false;
 
-// event listener to get a random poem on button click
+// event listeners
 document.querySelector('#get-random').addEventListener('click', randomPoem)
-
-// event listener to reset poem
 document.querySelector('#reset').addEventListener('click', resetPoem)
-
-// event listener to black out poem
 document.querySelector('#blackout').addEventListener('click', blackout)
-
-// event listener for clicking the next arrow
 document.querySelector('#custom-arrow').addEventListener('click', useCustomText)
+document.querySelector('#info').addEventListener('click', displayInstructions)
+
+function displayInstructions() {
+    document.querySelector('#instructions-container').classList.toggle('hidden');
+}
 
 // event listener to the save as image
 // document.querySelector('#save').addEventListener('click', savePoemAsImage);
