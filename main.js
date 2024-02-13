@@ -13,6 +13,7 @@ document.querySelector('#reset').addEventListener('click', resetPoem)
 document.querySelector('#blackout').addEventListener('click', blackout)
 document.querySelector('#custom-arrow').addEventListener('click', useCustomText)
 document.querySelector('#info').addEventListener('click', displayInstructions)
+document.querySelector('#search-arrow').addEventListener('click', searchForPoem)
 
 function displayInstructions() {
     document.querySelector('#instructions-container').classList.toggle('hidden');
@@ -175,7 +176,37 @@ function useCustomText() {
 
 // **function to search for poem
 function searchForPoem() {
-// fill in
+    console.log('you are running the search for poem function')
+    
+    // get user's search query out of input
+    const userSearch = document.querySelector('#search').value
+
+    // variable to store searchtype
+    const searchType = document.querySelector('#searchType').value.toLowerCase()
+
+    let url = ``
+
+    // if searching by title
+    if (searchType === 'title') {
+        // api will fetch the poem's lines if it comes up with one that has that title **will need to implement error handling
+        url = `https://poetrydb.org/title/${userSearch}/lines`
+    } else if (searchType === 'author') {
+        // will fetch a list of the titles by that author **wil need to do error handling if they don't have the author, and display the titles as suggestions where they can select one
+        url = `https://poetrydb.org/author/${userSearch}/title`
+    } else if (searchType === 'keyword') {
+        // will return a list of titles of poems that have the word mermaid in it **need error handling and to suggest these titles
+        url = `https://poetrydb.org/lines/${userSearch}/title`
+    }
+    
+    // api fetch
+    fetch(url)
+    .then(res => res.json()) // parse response as JSON
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err => {
+        console.log(`error ${err}`)
+    });
 }
 
 // **Function to save the poem as an image
