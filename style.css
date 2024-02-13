@@ -54,6 +54,10 @@ html {
     font-size: 62.5%;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     font-size: 2rem;
     margin: 3rem 0;
@@ -138,10 +142,6 @@ header {
     align-items:center;
 }
 
-#search-area {
-    width:17rem;
-}
-
 /* ADDITIONAL STYLING */
 h1 {
     color: #DDECDD;
@@ -171,7 +171,7 @@ h1 {
 }
 
 /* STYLING CONTROLS AREA */
-#controls-section, button, #search-area, #search, #custom-text, #custom {
+#controls-section, button, #search-area, #custom-text, #custom {
     border-radius:15px;
 }
 
@@ -207,16 +207,9 @@ button {
     min-height: 6rem;
 }
 
-#custom-text textarea {
+#custom {
     width: 14rem;
-}
-
-#custom-text {
-    width: 17rem;
-}
-
-#custom:focus {
-    height:10rem;
+    min-height: 10rem;
 }
 
 /* styling next arrow to submit custom text when its ready*/
@@ -248,6 +241,29 @@ button {
     padding:1rem;
     margin-top:1rem;
     height:3rem;
+}
+
+#searchBar {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+#search-area {
+    width:22rem;
+}
+
+#search {
+    border-radius: 0 15px 15px 0;
+}
+
+#searchType {
+    border-radius: 15px 0 0 15px;
+    border:2px solid #523E5C;
+    border-right: none;
+    margin-top:1rem;
+    text-align: center;
 }
 
 /* styling hovered words */
