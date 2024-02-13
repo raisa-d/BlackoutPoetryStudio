@@ -372,8 +372,9 @@ button {
 }
 
 @media all and (max-width:575px) {
-    #controls-section {
-        margin: 0
+    #controls-container {
+        margin: 0;
+        width: 20rem;
     }
     #search-area {
         width: 16rem;
@@ -383,9 +384,6 @@ button {
         width: 8rem;
     }
 
-    /* #poem-textbox {
-        width: 65dvw;
-    } */
 
     #main {
         justify-content: space-around;
@@ -394,4 +392,19 @@ button {
     #controls-section, #textbox-container {
         flex: 1;
     }
+}
+
+@media all and (max-width: 458px) {
+    h1 {
+        padding: 1rem 2rem 1rem 1rem;
+    }
+
+    button {
+        width: 15rem;
+    }
+
+    #search-area, #custom-text {
+        width: 15rem;
+    }
+
 }
