@@ -23,7 +23,8 @@ Blackout Poetry Studio is a web app that enables users to create blackout poetry
 1. Save progress in local storage so it doesn't delete user progress if they refresh it
 2. Search functionality to get poem by searching the database by keyword, author, etc.
 3. Save and share your poem
-4. Styling & making it responsive
+4. Add an 'edit' button to edit a poem after you've blacked it out
+5. Styling & making it responsive
    - have instructions be expandable/collapsible across devices
    - add dark mode
 
