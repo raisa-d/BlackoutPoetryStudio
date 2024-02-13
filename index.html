@@ -10,8 +10,6 @@
 <body>
     <header>
         <h1>Blackout Poetry Studio</h1>
-        <!-- deciding whether to remove this section 
-            <p>Blackout (aka erasure or redacted) poetry is a type of found poetry where a poet makes something new from something pre-existing ("found").</p> -->
     </header>
     <div id="main-container">
         <section id="main">
@@ -32,16 +30,17 @@
                 </div>
                 <ul id="controls-container">
                     <li>
-                        <button id="get-random">Get Random Text</button>
+                        <button id="get-random">Get Random Poem</button>
                     </li>
                     <li id="search-area">
                         <label for="search">Search for Base Poem</label>
                         <input disabled id="search" type="text">
+                        <i id="search-arrow" class="fa-solid fa-arrow-right arrow"></i>
                     </li>
                     <li id="custom-text">
                         <label for="custom">Enter Custom Text</label>
                         <textarea id="custom" rows="5" columns="5"></textarea>
-                        <i id="arrow" class="fa-solid fa-arrow-right"></i>
+                        <i id="custom-arrow" class="fa-solid fa-arrow-right arrow"></i>
                     </li>
                     <li>
                         <button id="blackout">Blackout</button>
@@ -64,6 +63,22 @@
             </div>
         </section>
     </div>
+    <footer>
+        <div id="socials">
+            <a target="_blank" href="https://github.com/raisa-d/BlackoutPoetryMaker">
+                <i class="fa-brands fa-github fa-2x"></i>
+            </a>
+            <a target="_blank" href="https://twitter.com/rai__bread">
+                <i class="fa-brands fa-x-twitter fa-2x"></i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/raisa-d/">
+                <i class="fa-brands fa-linkedin fa-2x"></i>
+            </a>
+        </div>
+        <p id="copyright">
+            &copy; <a target="_blank" href="https://raisadorzback.netlify.app/">Raisa Dorzback</a> 2024
+        </p>
+    </footer>
     <script src="https://kit.fontawesome.com/b06dcc32db.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="main.js"></script>
     <!-- font awesome -->

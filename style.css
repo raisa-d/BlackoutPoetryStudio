@@ -130,7 +130,7 @@ header {
 #controls-container {
     flex-direction: column;
     align-items:center;
-    color: #fff;
+    color: #DDECDD;
 }
 
 #search-area, #custom-text {
@@ -144,13 +144,17 @@ header {
 
 /* ADDITIONAL STYLING */
 h1 {
-    color: #7148fc;
+    color: #DDECDD;
     text-align:center;
-    margin-bottom:2rem;
+    margin:0 auto 2rem auto;
+    background: #2F2235;
+    width: 40%;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 #poem-textbox {
-    border: 10px solid #1E293B;
+    border: 10px solid #2F2235;
     border-radius:3rem;
     width:35dvw;
 }
@@ -188,13 +192,14 @@ button, #search-area, #custom-text {
     border-radius: 15px;
     border:none;
     color:#D6DEE7;
-    background:#7148FC;
+    background:#523E5C;
 }
 
 button:hover {
     font-weight:900;
     color:#fff;
     cursor: pointer;
+    background:#A6849D;
 }
 
 button {
@@ -215,16 +220,17 @@ button {
 }
 
 /* styling next arrow to submit custom text when its ready*/
-#arrow {
+.arrow {
     margin-top:1rem;
     cursor: pointer;
-    background:#1E293B;
+    background:#ACBBAC;
     padding:0.8rem;
+    color: #2F2235;
     border-radius: 30%;
 }
 
-#arrow:hover {
-    background:#28364d;
+.arrow:hover {
+    background:#DDECDD;
 }
 
 /* save and share buttons */
@@ -238,7 +244,7 @@ button {
 }
 
 #search, #custom {
-    border:2px solid #7148FC;
+    border:2px solid #523E5C;
     padding:1rem;
     margin-top:1rem;
     height:3rem;
@@ -251,13 +257,12 @@ button {
 }
 
 .selected-word {
-    border: 2px solid #7148FC;
+    border: 2px solid #523E5C;
     cursor: pointer;
 }
 
 /* style for blacked out words */
 .blackedOut {
-    background: #1E293B;
     background: black;
     color: black; 
 }
@@ -268,7 +273,39 @@ button {
     border: none;
 }
 
+/* FOOTER */
+#socials {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content:center;
+    /* border: 2px solid black; */
+    margin: 3rem 0 1rem 0;
+}
 
+#socials a {
+    margin: 0 1rem;
+    color: #A6849D;
+}
+
+#socials a:hover {
+    color: #ACBBAC;
+}
+
+#copyright {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #2F2235;
+}
+
+#copyright a {
+    text-decoration: none;
+}
+
+#copyright a:hover {
+    color: #8E6780;
+}
 
 /* media queries */
 @media all and (max-width:950px) {

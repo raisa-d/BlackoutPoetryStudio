@@ -1,5 +1,3 @@
-// /<input field>/<search term>[;<search term>][..][:<search type>][/<output field>][,<output field>][..][.<format>]
-
 const url = `https://poetrydb.org/random/1/author,title,linecount,lines`
 // variable for the poem textbox
 const poemBox = document.querySelector('#poem')
@@ -19,7 +17,7 @@ document.querySelector('#reset').addEventListener('click', resetPoem)
 document.querySelector('#blackout').addEventListener('click', blackout)
 
 // event listener for clicking the next arrow
-document.querySelector('#arrow').addEventListener('click', useCustomText)
+document.querySelector('#custom-arrow').addEventListener('click', useCustomText)
 
 // event listener to the save as image
 // document.querySelector('#save').addEventListener('click', savePoemAsImage);
@@ -174,6 +172,11 @@ function useCustomText() {
 
     // call add event listeners function so that user can interact with words
     addEventListenersToWords();
+}
+
+// **function to search for poem
+function searchForPoem() {
+// fill in
 }
 
 // **Function to save the poem as an image
