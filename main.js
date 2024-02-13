@@ -22,7 +22,7 @@ document.querySelector('#blackout').addEventListener('click', blackout)
 document.querySelector('#arrow').addEventListener('click', useCustomText)
 
 // event listener to the save as image
-document.querySelector('#save').addEventListener('click', savePoemAsImage);
+// document.querySelector('#save').addEventListener('click', savePoemAsImage);
 
 // function to get & display a random poem
 function randomPoem() {
@@ -40,16 +40,27 @@ function randomPoem() {
 
         resetPoem()
 
-        // if the poem is less then 100 lines
-        if (data[0].linecount < 100) {
-            // put each poem line within a paragraph element
-            const poemHTML = poemLines.map(line => `<p>${line}</p>`).join("");
+        // if the poem is less then 105 lines
+        if (data[0].linecount < 105) {
             
-            // insert poem into DOM
-            poemBox.innerHTML = poemHTML;
+            // creating a document fragment for the poem which we can add nodes to
+            const poemFragment = document.createDocumentFragment();
 
+            poemLines.forEach(line => {
+                // paragraph element
+                const paragraph = document.createElement('p')
+                // make each line the content of a paragraph
+                paragraph.textContent = line;
+                // add that paragraph as a child to the poemFragment
+                poemFragment.appendChild(paragraph)
+            });
+
+            // add the fragment we made as a child of the poemBox
+            poemBox.appendChild(poemFragment)
+            
             // call event listener function
             addEventListenersToWords()
+
         } else randomPoem();
     })
     .catch(err => {
@@ -58,27 +69,36 @@ function randomPoem() {
 }
 
 // function to add event listeners to each word
-
-// function to add event listeners to each word
 function addEventListenersToWords() {
 
-    const words = document.querySelectorAll('#poem p');
+    const poemParagraphs = document.querySelectorAll('#poem p');
 
-    words.forEach(word => {
-        const wordText = word.textContent.trim();
-        const wordHTML = wordText.split(' ').map(w => `<span class="word">${w}</span>`).join(' ');
+    poemParagraphs.forEach(paragraph => {
+        // get content of poem paragraph and split it into individual words
+        const words = paragraph.textContent.trim().split(' ')
 
-        word.innerHTML = wordHTML
+        // remove current paragraph content
+        paragraph.textContent = ''
 
-        const wordSpans = word.querySelectorAll('.word');
-        // for each word span, add an event listener
-        wordSpans.forEach(wordSpan => {
+        words.forEach(word => {
+            const wordSpan = document.createElement('span');
+            // add each word into a span
+            wordSpan.textContent = word;
+            // add the class of word to each word
+            wordSpan.classList.add('word');
+    
+            // add event listeners to word spans
             wordSpan.addEventListener('mouseover', hover);
             wordSpan.addEventListener('mouseout', unhover);
             wordSpan.addEventListener('click', selectWord);
-        });
-    })
     
+            paragraph.appendChild(wordSpan)
+
+            // add a space after each word
+            paragraph.appendChild(document.createTextNode(' '));
+
+        });
+    });
 }
 
 function hover() {
@@ -135,11 +155,22 @@ function useCustomText() {
     // get an array of each word
     let customWords = customBase.split(' ');
 
-    // add spans to each word
-    let customHTML = customWords.map(w => `<span class="word">${w}</span>`).join(' ');
+    // new paragraph element
+    const paragraph = document.createElement('p');
 
-    // inert the customHTML into the poemBox
-    poemBox.innerHTML = `<p>${customHTML}</p>`;
+    // put each word inside of a span and add the class 'word'
+    customWords.forEach(word => {
+        const wordSpan = document.createElement('span');
+        wordSpan.textContent = word;
+        wordSpan.classList.add('word');
+        paragraph.appendChild(wordSpan)
+        // add a space after each word
+        paragraph.appendChild(document.createTextNode(' '));
+    })
+
+    poemBox.textContent = '';
+
+    poemBox.appendChild(paragraph);
 
     // call add event listeners function so that user can interact with words
     addEventListenersToWords();
@@ -152,6 +183,3 @@ function savePoemAsImage() {
         console.log('you are trying to save your poem as an image')
     }
 }
-
-// NOTES
-// use something instead of innerHTML so users can't inject code
