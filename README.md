@@ -25,6 +25,7 @@ Blackout Poetry Studio is a web app that enables users to create blackout poetry
 3. Save and share your poem
 4. Styling & making it responsive
    - have instructions be expandable/collapsible across devices
+   - add dark mode
 
 ## APIS I am considering using
 - [poetryDB API](https://poetrydb.org/index.html): Using this to pull the random poem from
