@@ -150,7 +150,7 @@ h1 {
     background: #2F2235;
     width: 40%;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 /* instructions */
@@ -275,11 +275,16 @@ button {
     height:3rem;
 }
 
-#searchBar {
+#searchBar, #dropdown-container {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
+}
+
+#dropdown-container {
+    flex-flow: column;
+    width: 15rem;
 }
 
 #search-area {

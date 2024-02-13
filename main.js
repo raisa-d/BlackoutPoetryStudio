@@ -37,7 +37,7 @@ function randomPoem() {
         poemBox.innerText = ''
 
         resetPoem()
-
+        
         // if the poem is less then 105 lines
         if (data[0].linecount < 105) {
             
@@ -202,11 +202,47 @@ function searchForPoem() {
     fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data);
+        // console.log(data);
+     
+        const listOfPoems = []
+        
+        // console log a list of the title options / search results
+        if (searchType !== 'title') {
+            for(let i = 0; i < data.length; i++) {
+                listOfPoems.push(data[i].title)
+            }
+        // if they search by title, display it in the DOM or tell them we didn't find that poem and to try another search
+        } else {
+            // ** fill in
+        }
+
+        createDropdown(listOfPoems)
     })
     .catch(err => {
         console.log(`error ${err}`)
     });
+}
+
+function createDropdown(poemTitles) {
+    console.log(poemTitles)
+
+    // storing the dropdown select element
+    const dropdown = document.querySelector('#searchResults');
+
+    // unhide dropdown
+    dropdown.classList.remove('hidden');
+
+    // loop through list of poem titles, create an option for each one, append them to the dropdown
+    for(let i = 0; i < poemTitles.length; i++) {
+        // create an option
+        const option = document.createElement('option');
+
+        option.textContent = `${poemTitles[i]}`;
+
+        dropdown.appendChild(option)
+
+    // **display poem. create a display poem function based on what is currently in the randomPoem() function so we can use it modularly
+    }
 }
 
 // **Function to save the poem as an image

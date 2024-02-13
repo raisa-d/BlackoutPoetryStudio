@@ -36,13 +36,19 @@
                     <li id="search-area">
                         <label for="search">Search for Base Poem</label>
                         <div id="searchBar">
-                            <select id="searchType">
+                            <select disabled id="searchType">
                                 <option value="author">Author</option>
                                 <option value="title">Title</option>
                                 <option value="keyword">Keyword</option>
                             </select>
-                            <input id="search" type="text">
+                            <input disabled id="search" type="text">
                         </div>
+
+                        <div id="dropdown-container">
+                            <!-- search results dropdown -->
+                            <select class="hidden" id="searchResults"></select>
+                        </div>
+                        
                         <i id="search-arrow" class="fa-solid fa-arrow-right arrow"></i>
                     </li>
                     <li id="custom-text">
