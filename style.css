@@ -260,9 +260,13 @@ button {
 
 /* save and share buttons */
 .save-share {
-    background: #1E293B;
+    background: #6A776A;
 }
 
+.save-share:hover {
+    background: #ACBBAC;
+    color: #2F2235;
+}
 /* search area and custom text styling */
 #search-area, #custom-text {
     text-align:center;

@@ -14,13 +14,11 @@ document.querySelector('#blackout').addEventListener('click', blackout)
 document.querySelector('#custom-arrow').addEventListener('click', useCustomText)
 document.querySelector('#info').addEventListener('click', displayInstructions)
 document.querySelector('#search-arrow').addEventListener('click', searchForPoem)
+// document.querySelector('#save').addEventListener('click', savePoemAsImage);
 
 function displayInstructions() {
     document.querySelector('#instructions-container').classList.toggle('hidden');
 }
-
-// event listener to the save as image
-// document.querySelector('#save').addEventListener('click', savePoemAsImage);
 
 // function to get & display a random poem
 function randomPoem() {
@@ -31,39 +29,40 @@ function randomPoem() {
 
         poemIsBlackedOut = false;
 
-        const poemLines = data[0].lines
-
-        // reset the box to be empty each time they want to get a new random poem
-        poemBox.innerText = ''
-
-        resetPoem()
+        const randomPoemLines = data[0].lines
         
         // if the poem is less then 105 lines
         if (data[0].linecount < 105) {
-            
-            // creating a document fragment for the poem which we can add nodes to
-            const poemFragment = document.createDocumentFragment();
-
-            poemLines.forEach(line => {
-                // paragraph element
-                const paragraph = document.createElement('p')
-                // make each line the content of a paragraph
-                paragraph.textContent = line;
-                // add that paragraph as a child to the poemFragment
-                poemFragment.appendChild(paragraph)
-            });
-
-            // add the fragment we made as a child of the poemBox
-            poemBox.appendChild(poemFragment)
-            
-            // call event listener function
-            addEventListenersToWords()
-
+            displayPoem(randomPoemLines)
         } else randomPoem();
     })
     .catch(err => {
         console.log(`error ${err}`)
     });
+}
+
+function displayPoem(poemLines) {
+    // reset the box to be empty each time they want to get a new random poem
+    poemBox.innerText = ''
+    resetPoem()
+
+    // creating a document fragment for the poem which we can add nodes to
+    const poemFragment = document.createDocumentFragment();
+
+    poemLines.forEach(line => {
+        // paragraph element
+        const paragraph = document.createElement('p')
+        // make each line the content of a paragraph
+        paragraph.textContent = line;
+        // add that paragraph as a child to the poemFragment
+        poemFragment.appendChild(paragraph)
+    });
+
+    // add the fragment we made as a child of the poemBox
+    poemBox.appendChild(poemFragment)
+    
+    // call event listener function
+    addEventListenersToWords()
 }
 
 // function to add event listeners to each word
@@ -176,7 +175,7 @@ function useCustomText() {
 
 // **function to search for poem
 function searchForPoem() {
-    console.log('you are running the search for poem function')
+    console.log('you are running the searchForPoem function')
     
     // get user's search query out of input
     const userSearch = document.querySelector('#search').value
@@ -189,7 +188,7 @@ function searchForPoem() {
     // if searching by title
     if (searchType === 'title') {
         // api will fetch the poem's lines if it comes up with one that has that title **will need to implement error handling
-        url = `https://poetrydb.org/title/${userSearch}/lines`
+        url = `https://poetrydb.org/title/${userSearch}/title,lines`
     } else if (searchType === 'author') {
         // will fetch a list of the titles by that author **wil need to do error handling if they don't have the author, and display the titles as suggestions where they can select one
         url = `https://poetrydb.org/author/${userSearch}/title`
@@ -202,29 +201,38 @@ function searchForPoem() {
     fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        // console.log(data);
-     
-        const listOfPoems = []
+        // console.log(`Data: ${data}`);
         
-        // console log a list of the title options / search results
+        // console log a list of the title options / search results if searching by author or keyword
         if (searchType !== 'title') {
-            for(let i = 0; i < data.length; i++) {
-                listOfPoems.push(data[i].title)
-            }
-        // if they search by title, display it in the DOM or tell them we didn't find that poem and to try another search
-        } else {
-            // ** fill in
-        }
+            const listOfPoems = data.map(poem => poem.title)
+        
+        // store title of user's poem choice
+        let userPoemChoice = createDropdown(listOfPoems)
 
-        createDropdown(listOfPoems)
+        // ** this is not waiting for result
+        console.log(`You chose: ${userPoemChoice}`)
+
+        // **access lines of poem from database and pass it into the displayPoem() function
+
+        // if they search by title, display it in the DOM or give error message
+        } else {
+            console.log(data)
+            if(data[0]) {
+                displayPoem(data[0].lines)
+            } else if (data.status === 404) {
+                poemBox.innerText = ''
+                poemBox.innerText = 'Oops, we can\'t find that poem :(\nTry searching for another one?';
+            }
+        }
     })
     .catch(err => {
         console.log(`error ${err}`)
     });
 }
 
-function createDropdown(poemTitles) {
-    console.log(poemTitles)
+function createDropdown(listOfPoems) {
+    // console.log(listOfPoems)
 
     // storing the dropdown select element
     const dropdown = document.querySelector('#searchResults');
@@ -233,17 +241,21 @@ function createDropdown(poemTitles) {
     dropdown.classList.remove('hidden');
 
     // loop through list of poem titles, create an option for each one, append them to the dropdown
-    for(let i = 0; i < poemTitles.length; i++) {
+    for(let i = 0; i < listOfPoems.length; i++) {
         // create an option
         const option = document.createElement('option');
 
-        option.textContent = `${poemTitles[i]}`;
+        option.textContent = `${listOfPoems[i]}`;
 
         dropdown.appendChild(option)
-
-    // **display poem. create a display poem function based on what is currently in the randomPoem() function so we can use it modularly
     }
-}
+    
+    let userChoice = ''
+
+    document.querySelector('#search-arrow').addEventListener('click', () => userChoice = document.querySelector('searchResults').value)
+    
+    return userChoice
+};
 
 // **Function to save the poem as an image
 function savePoemAsImage() {
