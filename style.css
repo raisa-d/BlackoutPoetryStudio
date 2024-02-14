@@ -117,10 +117,6 @@ header {
     margin-right: 2rem;
 }
 
-#instructions-container {
-    width: 30rem;
-}
-
 /* FLEXBOX */
 #controls-container, #search-area, #main, header, #textbox-container, #custom-text, #save-share {
     display: -moz-flex;
@@ -154,6 +150,10 @@ h1 {
 }
 
 /* instructions */
+#instructions-container {
+    width: 30rem;
+}
+
 #instructions-title, #instructions-container p, #instructions-container li:not(:last-child) {
     margin-bottom:1rem;
 }
