@@ -187,7 +187,7 @@ function searchForPoem() {
 
     // if searching by title
     if (searchType === 'title') {
-        // api will fetch the poem's lines if it comes up with one that has that title **will need to implement error handling
+        // fetch poem's lines
         url = `https://poetrydb.org/title/${userSearch}/title,lines`
     } else if (searchType === 'author') {
         // will fetch a list of the titles by that author **wil need to do error handling if they don't have the author, and display the titles as suggestions where they can select one
@@ -201,21 +201,24 @@ function searchForPoem() {
     fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        // console.log(`Data: ${data}`);
+        console.log(data);
         
-        // console log a list of the title options / search results if searching by author or keyword
+        // create list of the title options / search results if searching by author or keyword
         if (searchType !== 'title') {
-            const listOfPoems = data.map(poem => poem.title)
-        
-        // store title of user's poem choice
-        let userPoemChoice = createDropdown(listOfPoems)
+            // if there's at least 1 poem
+            if (data[0]) {
+                let listOfPoems = data.map(poem => poem.title)
+                createDropdown(listOfPoems)
+                // ** display poem 
+                // **access lines of poem from database and pass it into the displayPoem() function
 
-        // ** this is not waiting for result
-        console.log(`You chose: ${userPoemChoice}`)
-
-        // **access lines of poem from database and pass it into the displayPoem() function
+            } else if (data.status === 404) {
+                poemBox.textContent = '';
+                poemBox.textContent = `Oh no, we can\'t find any poems by that ${searchType} :( \nTry another search term.`
+            }
 
         // if they search by title, display it in the DOM or give error message
+        // **should also have a dropdown of possible poems if there's more than one so user can choose
         } else {
             console.log(data)
             if(data[0]) {
@@ -241,20 +244,17 @@ function createDropdown(listOfPoems) {
     dropdown.classList.remove('hidden');
 
     // loop through list of poem titles, create an option for each one, append them to the dropdown
-    for(let i = 0; i < listOfPoems.length; i++) {
-        // create an option
+    listOfPoems.forEach(poemTitle => {
         const option = document.createElement('option');
-
-        option.textContent = `${listOfPoems[i]}`;
-
+        option.textContent = `${poemTitle}`;
         dropdown.appendChild(option)
-    }
-    
-    let userChoice = ''
+    })
 
-    document.querySelector('#search-arrow').addEventListener('click', () => userChoice = document.querySelector('searchResults').value)
-    
-    return userChoice
+    // ** trying to store the user's selection out of the options in the dropdown so we know which one to display and can then display it
+    // document.querySelector('#search-arrow').addEventListener('click', () => {
+    //     const userPoemChoice = document.querySelector('searchResults').value
+    //     console.log(`You chose: ${userPoemChoice}`)
+    // });
 };
 
 // **Function to save the poem as an image
