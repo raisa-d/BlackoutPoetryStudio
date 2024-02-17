@@ -387,16 +387,17 @@ select {
 
 #copyright {
     text-align: center;
-    font-size: 1.6rem;
-    color: #2F2235;
+    font-size: 1.8rem;
 }
 
 #copyright a {
     text-decoration: none;
+    color: #6b4d60;
 }
 
 #copyright a:hover {
     color: #8E6780;
+    font-weight: 700;
 }
 
 /* media queries */
