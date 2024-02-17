@@ -215,7 +215,9 @@ h1 {
 #poem-textbox {
     border: 10px solid #2F2235;
     border-radius:3rem;
-    width:35dvw;
+    min-width:40rem;
+    /* min-height: 40rem; */
+    /* align-self: flex-start; */
 }
 
 /* styling the words inside the textbox */
@@ -392,7 +394,7 @@ select {
 /* media queries */
 @media all and (max-width:950px) {
     #poem-textbox {
-        width: 45dvw;
+        min-width: 45dvw;
     }
 }
 
@@ -402,7 +404,7 @@ select {
     }
 
     #poem-textbox {
-        width: 50dvw;
+        min-width: 50dvw;
     }
 }
 
@@ -482,11 +484,11 @@ select {
 
     #poem-textbox {
         min-height: 70dvh;
-        width: 70dvw;
+        min-width: 70dvw;
     }
 
     #poem-textbox.open {
-        width: 50dvw;
+        min-width: 50dvw;
     }
 
     #main {

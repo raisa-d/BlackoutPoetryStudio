@@ -39,8 +39,8 @@ function randomPoem() {
 
         const randomPoemLines = data[0].lines
         
-        // if the poem is less then 105 lines
-        if (data[0].linecount < 105) {
+        // if the poem is less then 90 lines
+        if (data[0].linecount < 90) {
             displayPoem(randomPoemLines)
         } else randomPoem();
     })
