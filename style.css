@@ -216,8 +216,8 @@ h1 {
     border: 10px solid #2F2235;
     border-radius:3rem;
     min-width:40rem;
-    /* min-height: 40rem; */
-    /* align-self: flex-start; */
+    min-height: 40rem;
+    align-self:flex-start;
 }
 
 /* styling the words inside the textbox */
