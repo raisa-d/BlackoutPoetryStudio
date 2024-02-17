@@ -27,6 +27,7 @@ Blackout Poetry Studio is a web app that enables users to create blackout poetry
 4. Add an 'edit' button to edit a poem after you've blacked it out
 5. Styling
    - add dark mode
+   - make it so the words that aren't blacked out have more padding so it doesn't look weird in smaller viewport sizes
 6. Animations
    - have expandable elements smoothly transition
 
