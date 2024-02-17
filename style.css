@@ -222,6 +222,10 @@ h1 {
     min-width:40rem;
     min-height: 40rem;
     align-self:flex-start;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* styling the words inside the textbox */
