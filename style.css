@@ -421,6 +421,10 @@ select {
     }
 
     #menu-container {
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
         display: flex;
         justify-content: space-between;
         width: 100%;
