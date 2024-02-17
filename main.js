@@ -1,8 +1,10 @@
 const url = `https://poetrydb.org/random/1/author,title,linecount,lines`
-// variable for the poem textbox
-const poemBox = document.querySelector('#poem')
 
+// dom items stored in variables
+const poemBox = document.querySelector('#poem')
 const poemContainer = document.querySelector('#poem-textbox')
+const menuToggle = document.getElementById('menu-toggle');
+const controlsSection = document.getElementById('controls-section');
 
 // boolean to track whether the poem is blacked out or not
 poemIsBlackedOut = false;
@@ -15,6 +17,12 @@ document.querySelector('#custom-arrow').addEventListener('click', useCustomText)
 document.querySelector('#info').addEventListener('click', displayInstructions)
 document.querySelector('#search-arrow').addEventListener('click', searchForPoem)
 // document.querySelector('#save').addEventListener('click', savePoemAsImage);
+
+// when click hamburger menu, show the menu
+menuToggle.addEventListener('click', () => {
+    controlsSection.classList.toggle('open');
+    poemContainer.classList.toggle('open');
+});
 
 function displayInstructions() {
     document.querySelector('#instructions-container').classList.toggle('hidden');

@@ -103,6 +103,17 @@ header {
     align-items:center;
 }
 
+/* hamburger menu */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+}
+
+.spacer {
+    display: none;
+}
+
 /* poem text box layout */
 #textbox-container {
     justify-content: center;
@@ -144,14 +155,23 @@ h1 {
     text-align:center;
     margin:0 auto 1rem auto;
     background: #2F2235;
-    width: 40%;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 15px;
 }
 
 /* instructions */
 #instructions-container {
     width: 30rem;
+}
+
+#instructions-title {
+    display: flex;
+    align-items:center;
+}
+
+#menu-toggle {
+    /* align-self: flex-start; */
+    margin: 0;
 }
 
 #instructions-title, #instructions-container p, #instructions-container li:not(:last-child) {
@@ -164,6 +184,7 @@ h1 {
 
 #info {
     color: #523E5C;
+    margin-right: 0.5rem;
 }
 
 #info:hover {
@@ -376,53 +397,96 @@ select {
     }
 }
 
-@media all and (max-width: 730px) {
-
-    #controls-container {
-        margin-right: 2rem;
-        flex: 1
+@media all and (max-width: 650px) {
+    #main {
+        justify-content: space-around;
     }
 
     #poem-textbox {
         width: 50dvw;
     }
-
 }
 
-@media all and (max-width:575px) {
-    #controls-container {
-        margin: 0;
-        width: 20rem;
+/* create hidden hamburger menu */
+@media all and (max-width: 590px) {
+    h1 {
+        width: 40%;
     }
-    #search-area {
-        width: 16rem;
-    }
-
-    #search {
-        width: 8rem;
+    
+    #controls-section {
+        display:none;
     }
 
+    body {
+        margin: 1rem;
+    }
+
+    #menu-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .spacer {
+        display: block;
+        width: 4rem;
+    }
+    
+    #menu-toggle {
+        display: block;
+        background: #6a776a;
+        cursor: pointer;
+        text-align: center;
+        padding: 0.5rem;
+        color: #fff;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 10px;
+    }
+
+    #menu-toggle:hover {
+        background: #8E6780;
+
+    }
+
+    #controls-section.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #acbbac;
+        margin: 0 1rem 0 0;
+        padding: 2rem;
+    }
+
+    /* make menu items smaller */
+    #controls-container > li, button {
+        width: 10rem;
+        font-size: 1.6rem;
+    }
+
+    input {
+        width: 4.5rem;
+    }
+
+    select {
+        font-size: 1.2rem;
+        width: 4.5rem;
+    }
+
+    #custom-text textarea {
+        width: 9rem;
+    }
+
+    #poem-textbox {
+        min-height: 70dvh;
+        width: 70dvw;
+    }
+
+    #poem-textbox.open {
+        width: 50dvw;
+    }
 
     #main {
-        justify-content: space-around;
+        justify-content: center;
     }
-
-    #controls-section, #textbox-container {
-        flex: 1;
-    }
-}
-
-@media all and (max-width: 458px) {
-    h1 {
-        padding: 1rem 2rem 1rem 1rem;
-    }
-
-    button {
-        width: 15rem;
-    }
-
-    #search-area, #custom-text {
-        width: 15rem;
-    }
-
 }
