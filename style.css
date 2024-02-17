@@ -286,6 +286,11 @@ button {
     display: flex;
 }
 
+select {
+    width: 7rem;
+    font-size: 1.6rem;
+}
+
 #dropdown-container {
     flex-flow: column;
     width: 15rem;
