@@ -102,6 +102,13 @@ header {
     align-items:center;
 }
 
+#logo {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #acbbac;
+    width: 30rem;
+}
+
 /* hamburger menu */
 #menu-toggle {
     display: none;
@@ -152,16 +159,6 @@ header {
 }
 
 /* ADDITIONAL STYLING */
-
-/* header */
-h1 {
-    color: #DDECDD;
-    text-align:center;
-    margin:0 auto 1rem auto;
-    background: #2F2235;
-    padding: 2rem;
-    border-radius: 15px;
-}
 
 /* instructions */
 #instructions-container {
@@ -506,5 +503,17 @@ select {
 
     #main {
         justify-content: center;
+    }
+}
+
+@media all and (max-width:415px) {
+    #logo {
+        width: 25rem;
+    }
+}
+
+@media all and (max-width:360px) {
+    #logo {
+        width: 20rem;
     }
 }
