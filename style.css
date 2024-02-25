@@ -247,7 +247,7 @@ main {
     background: #fff;
     width: 50dvw;
     height: 80dvh;
-    margin: 5rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
     overflow:scroll;
     scrollbar-width: thin;
 }
@@ -272,21 +272,27 @@ main {
     }
 
 /* FOOTER */
-.copyright, .fa-brands {
+.copyright {
     color:#a6849d;
-}
-
-.fa-brands:hover {
-    color: #acbbac;
+    justify-self: flex-end;
 }
 
 .fa-brands {
-    margin: 3rem 1rem 2rem 1rem;
+    margin: 0 1rem 1rem 0;
+    color: #523E5C;
+}
+
+.socials {
+    justify-self: flex-end;
+}
+
+.fa-brands:hover {
+    color: #2f2235;
 }
 
 .copyright {
     font-size: 1.6rem;
-    padding-bottom: 1rem;
+    padding: 2rem 0 1rem 0;
 }
 
 .copyright a {

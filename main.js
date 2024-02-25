@@ -1,7 +1,5 @@
 const viewportWidth = window.innerWidth;
 
-console.log(viewportWidth)
-
 // dom items stored in variables
 const poemBox = document.querySelector('#poem')
 const poemContainer = document.querySelector('.poem-box')
@@ -9,7 +7,7 @@ const nav = document.querySelector('nav');
 const menuToggle = document.querySelector('.menu-toggle');
 
 // when you open app for first time, automatically have menu collapsed under 550px.
-if (viewportWidth < 550) {
+if (viewportWidth < 660) {
     nav.classList.add('collapsed');
     menuToggle.classList.add('collapsed');
 }
