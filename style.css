@@ -355,6 +355,10 @@ main {
         margin: 0;
         width: 18rem;
     }
+
+    .poem-box {
+        margin: 2rem;
+    }
 }
 
 @media all and (max-width:550px) {
