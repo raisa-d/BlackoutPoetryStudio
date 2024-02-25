@@ -248,6 +248,7 @@ main {
     height: 80dvh;
     margin: 5rem 0 2rem 0;
     overflow:scroll;
+    scrollbar-width: thin;
 }
 
     /* BLACKOUT, RESET, AND EDIT BUTTONS */
@@ -362,9 +363,12 @@ main {
     }
 }
 
-@media all and (max-widht: 650px) {
+@media all and (max-width: 650px) {
     .instructions-container {
         width: 18rem;
+        height: 20rem;
+        overflow: scroll;
+        scrollbar-width: thin;
     }
 }
 
