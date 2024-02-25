@@ -1,35 +1,43 @@
-const url = `https://poetrydb.org/random/1/author,title,linecount,lines`
+const viewportWidth = window.innerWidth;
+
+console.log(viewportWidth)
 
 // dom items stored in variables
 const poemBox = document.querySelector('#poem')
-const poemContainer = document.querySelector('#poem-textbox')
-const menuToggle = document.getElementById('menu-toggle');
-const controlsSection = document.getElementById('controls-section');
+const poemContainer = document.querySelector('.poem-box')
+const nav = document.querySelector('nav');
+const menuToggle = document.querySelector('.menu-toggle');
+
+// when you open app for first time, automatically have menu collapsed under 550px.
+if (viewportWidth < 550) {
+    nav.classList.add('collapsed');
+    menuToggle.classList.add('collapsed');
+}
 
 // boolean to track whether the poem is blacked out or not
 poemIsBlackedOut = false;
 
 // event listeners
-document.querySelector('#get-random').addEventListener('click', randomPoem)
-document.querySelector('#reset').addEventListener('click', resetPoem)
-document.querySelector('#blackout').addEventListener('click', blackout)
-document.querySelector('#custom-arrow').addEventListener('click', useCustomText)
 document.querySelector('#info').addEventListener('click', displayInstructions)
-document.querySelector('#search-arrow').addEventListener('click', searchForPoem)
-// document.querySelector('#save').addEventListener('click', savePoemAsImage);
+document.querySelector('.random').addEventListener('click', randomPoem)
+document.querySelector('.reset').addEventListener('click', () => resetPoem())
+document.querySelector('.blackout').addEventListener('click', blackout)
+document.querySelector('.custom-arrow').addEventListener('click', useCustomText)
+document.querySelector('.search-arrow').addEventListener('click', searchForPoem)
+menuToggle.addEventListener('click', toggleMenu)
 
-// when click hamburger menu, show the menu
-menuToggle.addEventListener('click', () => {
-    controlsSection.classList.toggle('open');
-    poemContainer.classList.toggle('open');
-});
+function toggleMenu() {
+    nav.classList.toggle('collapsed');
+    menuToggle.classList.toggle('collapsed');
+}
 
 function displayInstructions() {
-    document.querySelector('#instructions-container').classList.toggle('hidden');
+    document.querySelector('.instructions-container').classList.toggle('hidden');
 }
 
 // function to get & display a random poem
 function randomPoem() {
+    const url = `https://poetrydb.org/random/1/author,title,linecount,lines`;
     fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
@@ -39,8 +47,8 @@ function randomPoem() {
 
         const randomPoemLines = data[0].lines
         
-        // if the poem is less then 90 lines
-        if (data[0].linecount < 90) {
+        // if the poem is less then 200 lines
+        if (data[0].linecount < 200) {
             displayPoem(randomPoemLines)
         } else randomPoem();
     })
@@ -137,20 +145,17 @@ function blackout() {
 
 // function to reset the poem by removing selected words
 function resetPoem() {
-    poemIsBlackedOut = false;
-
     // select all word spans in poem
     const wordSpans = document.querySelectorAll('#poem .word');
-
-    // loop through array of word spans
+    
     wordSpans.forEach(wordSpan => {
-        // remove 'selected-word' from each one
         wordSpan.classList.remove('selected-word');
-        wordSpan.classList.remove('blackedOut');
         wordSpan.classList.remove('selected-during-blackout');
+        wordSpan.classList.remove('blackedOut');
     });
 
     poemContainer.classList.remove('blackedOut');
+    poemIsBlackedOut = false;
 }
 
 function useCustomText() {

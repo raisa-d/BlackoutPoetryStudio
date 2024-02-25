@@ -13,111 +13,79 @@
     <!-- stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>  
-        <div id="menu-container">
-            <!-- hamburger menu -->
-            <div id="menu-toggle" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars fa-2x"></i>
+<body class="flex-container column">
+    <div class="flex-container">
+        <div class="flex-container column left-section">
+            <div aria-label="Toggle Menu" class="menu-toggle">
+                <i class="fa-solid fa-chevron-right"></i>
             </div>
-            <img id="logo" src="/images/logo.png" alt="Blackout Poetry Studio">
-            <!-- spacer -->
-            <div class="spacer"></div>
-        </div>  
-
-        <div id="instructions-title">
-            <i id="info" class="fa-solid fa-circle-info"></i>
-            <span>Instructions</span>
-        </div>
-        </div>
-        
-        <div class="hidden" id="instructions-container">
-            <p class="title">What is Blackout Poetry?</p>
-            <p>Blackout poetry is made by blacking out words on a pre-existing text so that the only ones which remain visible create a poem of your own.</p>
-            <p class="title">How Do I Get Started?</p>
-            <ol>
-                <li>Get a base poem to work with. Either get a random poem, search for a poem by title or enter custom text.</li>
-                <li>Click on the words you want to keep in your new poem.</li>
-                <li>When you are ready, click 'Blackout.'</li>
-                <li>Save your poem by screenshotting! (In a future version you will be able to save & share directly from here.)</li>
-            </ol>
-        </div>
-    </header>
-    <div id="main-container">
-        <section id="main">
-            <section id="controls-section">
-                <ul id="controls-container">
-                    <li>
-                        <button id="get-random">Get Random Poem</button>
+            <nav class="flex-container column">
+                <img class="logo" src="/images/logo.png" alt="Blackout Poetry Studio">
+                <div class="instructions">
+                    <i class="fa-solid fa-circle-info" id="info"></i>
+                    <span>Instructions</span>
+                </div>
+                <div class="instructions-container flex-container column hidden">
+                    <p class="title">What is Blackout Poetry?</p>
+                    <p>Blackout poetry is made by blacking out words on a pre-existing text so that the only ones which remain visible create a poem of your own.</p>
+                    <p class="title">How Do I Get Started?</p>
+                    <ol>
+                        <li>Get a base poem to work with. Either get a random poem, search for a poem by title or enter custom text.</li>
+                        <li>Click on the words you want to keep in your new poem.</li>
+                        <li>When you are ready, click 'Blackout.'</li>
+                        <li>Save your poem by screenshotting! (In a future version you will be able to save & share directly from here.)</li>
+                    </ol>
+                </div>
+                <ul class="nav-ul">
+                    <li class="btn random">
+                        Get Random Poem
                     </li>
-                    <li id="search-area">
-                        <label for="search">Search for Base Poem</label>
-                        <div id="searchBar">
-                            <select id="searchType">
-                                <!-- <option disabled value="author">Author</option> -->
+                    <li class="flex-container column search-container">
+                        Search For Base Poem
+                        <div class="search-bar">
+                            <select name="search" id="searchType">
                                 <option value="title">Title</option>
-                                <!-- <option disabled value="keyword">Keyword</option> -->
+                                <!-- <option value="author">Author</option> -->
                             </select>
                             <input id="search" type="text">
                         </div>
-
-                        <div id="dropdown-container">
-                            <!-- search results dropdown -->
-                            <select class="hidden" id="searchResults">
-                                <option value="default" disabled selected>Poem title</option>
-                            </select>
-                        </div>
-                        
-                        <i id="search-arrow" class="fa-solid fa-arrow-right arrow"></i>
+                        <i class="fa-solid fa-arrow-right search-arrow"></i>
                     </li>
-                    <li id="custom-text">
-                        <label for="custom">Enter Custom Text</label>
-                        <textarea id="custom" rows="5" columns="5"></textarea>
-                        <i id="custom-arrow" class="fa-solid fa-arrow-right arrow"></i>
+                    <li class="flex-container column custom-container">
+                        Enter Custom Text
+                        <textarea name="custom" id="custom" cols="10" rows="5"></textarea>
+                        <i class="fa-solid fa-arrow-right custom-arrow"></i>
                     </li>
-                    <li>
-                        <button id="blackout">Blackout</button>
-                    </li>
-                    <!-- <li>
-                        <button id="edit">Edit</button>
-                    </li> -->
-                    <li>
-                        <button id="reset">Reset</button>
-                    </li>
-                    <!-- <li>
-                        <button id="save" class="save-share">Save</button>
-                    </li> -->
-                    <!-- <li>
-                        <button class="save-share">Share</button>
-                    </li> -->
                 </ul>
-            </section>
-            <div id="textbox-container">
-                <div id="poem-textbox">
-                    <div id="poem"></div>
-                </div>
-            </div>
-            <div class="main-spacer"></div>
-        </section>
-    </div>
-    <footer>
-        <div id="socials">
-            <a target="_blank" href="https://github.com/raisa-d">
-                <i class="fa-brands fa-github fa-2x"></i>
-            </a>
-            <a target="_blank" href="https://twitter.com/rai__bread">
-                <i class="fa-brands fa-x-twitter fa-2x"></i>
-            </a>
-            <a target="_blank" href="https://www.linkedin.com/in/raisa-d/">
-                <i class="fa-brands fa-linkedin fa-2x"></i>
-            </a>
+            </nav>
         </div>
-        <p id="copyright">
-            &copy; <a target="_blank" href="https://raisadorzback.netlify.app/">Raisa Dorzback</a> 2024
-        </p>
-    </footer>
+        <main class="flex-container column">
+            <div class="poem-box">
+                <div id="poem"></div>
+            </div>
+            <ul class="flex-container">
+                <li class="btn poembox-btn blackout">Blackout</li>
+                <!-- <li class="btn poembox-btn edit">Edit</li> -->
+                <li class="btn poembox-btn reset">Reset</li>
+            </ul>
+            <ul class="socials flex-container">
+                <li><a target="_blank" href="https://github.com/raisa-d">
+                    <i class="fa-brands fa-github fa-2x"></i>
+                </a></li>
+                <li><a target="_blank" href="https://twitter.com/rai__bread">
+                    <i class="fa-brands fa-square-x-twitter fa-2x"></i>
+                </a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/raisa-d/">
+                    <i class="fa-brands fa-linkedin fa-2x"></i>
+                </a></li>
+            </ul>
+            <p class="copyright">
+                &copy; <a target="_blank" href="https://raisadorzback.netlify.app/">Raisa Dorzback</a> 2024
+            </p>
+        </main>
+    </div>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/b06dcc32db.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>

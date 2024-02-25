@@ -1,5 +1,4 @@
-/* CSS reset
-http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -31,7 +30,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -52,130 +50,188 @@ table {
 /* DEFAULT STYLES */
 html {
     font-size: 62.5%;
+    height:100%;
 }
 
 body {
-    font-size: 2rem;
-    margin: 3rem 0;
-    font-family: 'Times New Roman', Arial;
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    background: #acbbac;
 }
 
-h1 {
-    font-size: 3.6rem;
-}
-
-h2 {
-    font-size: 3.4rem;
-}
-
-h3 {
-    font-size: 3.2rem;
-}
-
-h4 {
-    font-size: 3rem;
-}
-
-h5 {
-    font-size: 2.8rem;
-}
-
-h6 {
-    font-size: 2.6rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 900;
-}
-
-.hidden {
-    display: none !important;
-}
-
-#main {
-    justify-content: center;
-}
-/* header/nav layout */
-header {
-    -ms-flex-direction: column;
-    flex-direction: column;
-    align-items:center;
-}
-
-#logo {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #acbbac;
-    width: 30rem;
-}
-
-/* hamburger menu */
-#menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-}
-
-.spacer {
-    display: none;
-}
-
-.main-spacer {
-    width: 20rem;
-    margin-left: 2rem;
-}
-
-/* poem text box layout */
-#textbox-container {
-    justify-content: center;
-}
-
-/* layout for controls */
-#controls-section:not('#instructions-container') {
-    width: 20rem;
-}
-
-#controls-section {
-    margin-right: 2rem;
+* {
+    box-sizing: border-box;
 }
 
 /* FLEXBOX */
-#controls-container, #search-area, #main, header, #textbox-container, #custom-text, #save-share {
+.flex-container {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
 }
 
-#controls-container {
-    flex-direction: column;
-    align-items:center;
-    color: #DDECDD;
+.column {
+    flex-flow: column;
 }
 
-#search-area, #custom-text {
-    flex-direction:column;
+nav {
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    flex: 1;
+}
+
+.search-container, .custom-container, .instructions-container {
     align-items:center;
 }
 
-/* ADDITIONAL STYLING */
+footer {
+    align-items: center;
+    justify-content: center;
+}
 
-/* instructions */
-#instructions-container {
+.left-section {
+    align-items: center;
+}
+
+/* MENU TOGGLE */
+.menu-toggle {
+    cursor:pointer;
+    padding: 1rem 2rem;
+    transform: rotate(90deg);
+    align-self: flex-end;
+}
+
+.menu-toggle.collapsed {
+    transform: rotate(360deg);
+}
+
+/* NAV */
+nav {
+    background: #acbbac;
+    color: #2f2235;
+    font-size: 2.1rem;
+    height:100dvh;
+}
+
+nav.collapsed {
+    display: none;
+}
+
+    /* LOGO */
+    .logo {
+        height:8rem;
+        border-bottom: 1px solid #a6849d;
+    }
+
+    /* LIST ITEMS */
+    .nav-ul li {
+        background: #2f2235;
+        color:#acbbac;
+        font-weight:700;
+        padding: 3dvh 2dvw;
+        margin: 3.5dvh;
+        border-radius: 5px;
+    }
+
+    /* BUTTONS */
+    .btn:hover {
+        background: #a6849d;
+        color: #2f2235;
+        cursor:pointer;
+        font-weight: 700;
+        border-radius: 5px;
+    }
+
+    /* SEARCHBAR */
+    .search-bar input, .search-bar select {
+        height: 3.2rem;
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        border: 0;
+    }
+
+    .search-bar select {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .search-bar input {
+        border-radius: 0 5px 5px 0;
+    }
+
+    /* CUSTOM TEXT */
+    #custom {
+        border: 0;
+        width: 100%;
+        height: 15rem;
+        border-radius: 5px;
+        margin-top: 1rem;
+    }
+
+    /* ARROWS */
+    .fa-arrow-right {
+        background: #2f2235;
+        border: 1px solid #acbbac;
+        border-radius: 50%;
+        color: #acbbac;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+
+    .fa-arrow-right:hover {
+        background: #a6849d;
+        border: 1px solid #2f2235;
+        color: #2f2235;
+        cursor: pointer;
+    }
+
+/* MAIN */
+main {
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    align-self:flex-start;
+    background: #2f2235;
+}
+
+/* INSTRUCTIONS */
+.instructions {
+    color:#2f2235;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+}
+
+.fa-circle-info {
+    margin-right: 0.2rem;
+    cursor: pointer;
+}
+
+.fa-circle-info:hover {
+    color:#a6849d;
+}
+
+.instructions-container {
+    background: #a6849d;
     width: 30rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 15px;
+    font-size: 1.8rem;
 }
 
-#instructions-title {
-    display: flex;
-    align-items:center;
+.instructions-container ol {
+    text-align: left;
 }
 
-#menu-toggle {
-    /* align-self: flex-start; */
-    margin: 0;
+.instructions-container ol {
+    list-style-type:decimal;
+    width: 90%;
 }
 
-#instructions-title, #instructions-container p, #instructions-container li:not(:last-child) {
+.instructions-container li:not(:last-child), .instructions-container p {
     margin-bottom:1rem;
 }
 
@@ -183,164 +239,81 @@ header {
     font-weight: bold;
 }
 
-#info {
-    color: #523E5C;
-    margin-right: 0.5rem;
+/* POEM BOX */
+.poem-box {
+    border: 10px solid #a6849d;
+    background: #fff;
+    width: 50dvw;
+    height: 80dvh;
+    margin: 5rem 0 2rem 0;
+    overflow:scroll;
 }
 
-#info:hover {
-    color: #8e9b8e;
-    cursor: pointer;
+    /* BLACKOUT, RESET, AND EDIT BUTTONS */
+    .poembox-btn {
+        margin: 0 1rem;
+        padding: 1rem;
+        border: 0;
+        font-size: 2rem;
+        border-radius: 5px;
+        background: #acbbac;
+        color: #2f2235;
+        font-weight: 700;
+        border: 2px solid #acbbac;
+    }
+
+    .poembox-btn:hover {
+        color: #acbbac;
+        background: #2f2235;
+        border: 2px solid #acbbac;
+    }
+
+/* FOOTER */
+.copyright, .fa-brands {
+    color:#a6849d;
 }
 
-#instructions-container {
-    background: #ACBBAC;
-    color: #523E5C;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 15px;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+.fa-brands:hover {
+    color: #acbbac;
 }
 
-#instructions-container ol {
-    list-style-type:decimal;
-    width: 90%;
+.fa-brands {
+    margin: 3rem 1rem 2rem 1rem;
 }
 
-/* poem styling */
-#poem-textbox {
-    border: 10px solid #2F2235;
-    border-radius:3rem;
-    min-width:40rem;
-    min-height: 40rem;
-    align-self:flex-start;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+.copyright {
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
 }
 
-/* styling the words inside the textbox */
+.copyright a {
+    text-decoration: none;
+    color: #acbbac;
+    border-bottom: 2px dotted #acbbac;
+}
+
+.copyright a:hover {
+    color:#a6849d;
+    border-bottom: 2px dotted #a6849d;
+}
+
+/* HIDDEN */
+.hidden {
+    display: none;
+}
+
+/* POEM STYLING */
 #poem {
     margin: 2rem;
     font-size: 2.2rem;
-    color: #1E293B;
+    color: #2f2235;
 }
 
 #poem p {
     margin-bottom: 0.5rem;
 }
 
-/* STYLING CONTROLS AREA */
-#controls-section, button, #search-area, #custom-text, #custom {
-    border-radius:15px;
-}
-
-#controls-container li {
-    margin: 0.5rem 0;
-}
-
-/* buttons */
-button, #search-area, #custom-text {
-    padding: 1.5rem;
-    font-size:2rem;
-    border-radius: 15px;
-    border:none;
-    color:#D6DEE7;
-    background:#523E5C;
-}
-
-button:hover {
-    font-weight:900;
-    color:#fff;
-    cursor: pointer;
-    background:#A6849D;
-}
-
-button {
-    width: 20rem;
-    min-height: 6rem;
-}
-
-#custom {
-    width: 14rem;
-    min-height: 10rem;
-}
-
-/* styling next arrow to submit custom text when its ready*/
-.arrow {
-    margin-top:1rem;
-    cursor: pointer;
-    background:#ACBBAC;
-    padding:0.8rem;
-    color: #2F2235;
-    border-radius: 30%;
-}
-
-.arrow:hover {
-    background:#DDECDD;
-}
-
-/* save and share buttons */
-.save-share {
-    background: #6A776A;
-}
-
-.save-share:hover {
-    background: #ACBBAC;
-    color: #2F2235;
-}
-/* search area and custom text styling */
-#search-area, #custom-text {
-    text-align:center;
-}
-
-#search, #custom {
-    border:2px solid #523E5C;
-    padding:1rem;
-    margin-top:1rem;
-    height:3rem;
-}
-
-#searchBar, #dropdown-container {
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-}
-
-select {
-    width: 7rem;
-    font-size: 1.6rem;
-}
-
-#dropdown-container {
-    flex-flow: column;
-    width: 15rem;
-}
-
-#search-area {
-    width:22rem;
-}
-
-#search {
-    border-radius: 0 15px 15px 0;
-}
-
-#searchType {
-    border-radius: 15px 0 0 15px;
-    border:2px solid #523E5C;
-    border-right: none;
-    margin-top:1rem;
-    text-align: center;
-}
-
-/* styling hovered words */
+/* HOVERED WORDS */
 .word.hovered {
     font-weight: 900;
     cursor: pointer;
@@ -351,7 +324,7 @@ select {
     cursor: pointer;
 }
 
-/* style for blacked out words */
+/* BLACKED OUT WORDS */
 .blackedOut {
     background: black;
     color: black; 
@@ -363,157 +336,44 @@ select {
     border: none;
 }
 
-/* FOOTER */
-#socials {
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    justify-content:center;
-    margin: 3rem 0 1rem 0;
-}
-
-#socials a {
-    margin: 0 1rem;
-    color: #8e9b8e;
-}
-
-#socials a:hover {
-    color: #A6849D;
-}
-
-#copyright {
-    text-align: center;
-    font-size: 1.8rem;
-}
-
-#copyright a {
-    text-decoration: none;
-    color: #6b4d60;
-}
-
-#copyright a:hover {
-    color: #8E6780;
-    font-weight: 700;
-}
-
-/* media queries */
-@media all and (max-width:950px) {
-    #poem-textbox {
-        min-width: 45dvw;
-    }
-
-    .main-spacer {
-        display: none;
+/* MEDIA QUERIES */
+@media all and (max-width: 740px) {
+    #poem {
+        font-size: 2rem;
     }
 }
 
-@media all and (max-width: 650px) {
-    #main {
-        justify-content: space-around;
+@media all and (max-width: 705px) {
+    .search-bar select {
+        width: 18rem;
+        border-radius: 5px 5px 0 0;
+        background: #a6849d;
     }
 
-    #poem-textbox {
-        min-width: 50dvw;
+    .search-bar input {
+        border-radius: 0 0 5px 5px;
+        margin: 0;
+        width: 18rem;
     }
 }
 
-/* create hidden hamburger menu */
-@media all and (max-width: 590px) {
-    h1 {
-        width: 40%;
-    }
-    
-    #controls-section {
-        display:none;
-    }
-
-    body {
-        margin: 1rem;
-    }
-
-    #menu-container {
-        display: -moz-flex;
-        display: -webkit-flex;
-        display: -ms-flex;
-        display: flex;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .spacer {
-        display: block;
-        width: 4rem;
-    }
-    
-    #menu-toggle {
-        display: block;
-        background: #6a776a;
-        cursor: pointer;
-        text-align: center;
-        padding: 0.5rem;
-        color: #fff;
-        width: 4rem;
-        height: 4rem;
-        border-radius: 10px;
-    }
-
-    #menu-toggle:hover {
-        background: #8E6780;
-
-    }
-
-    #controls-section.open {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #acbbac;
-        margin: 0 1rem 0 0;
-        padding: 2rem;
-    }
-
-    /* make menu items smaller */
-    #controls-container > li, button {
-        width: 10rem;
-        font-size: 1.6rem;
-    }
-
-    input {
-        width: 4.5rem;
-    }
-
-    select {
-        font-size: 1.2rem;
-        width: 4.5rem;
-    }
-
-    #custom-text textarea {
-        width: 9rem;
-    }
-
-    #poem-textbox {
-        min-height: 70dvh;
-        min-width: 70dvw;
-    }
-
-    #poem-textbox.open {
-        min-width: 50dvw;
-    }
-
-    #main {
-        justify-content: center;
+@media all and (max-width:550px) {
+    .poem-box {
+        width: 75dvw;
     }
 }
 
-@media all and (max-width:415px) {
-    #logo {
-        width: 25rem;
-    }
-}
-
-@media all and (max-width:360px) {
-    #logo {
+@media all and (max-width:400px) {
+    nav {
         width: 20rem;
+    }
+
+    .logo {
+        height:7rem;
+    }
+
+    .nav-ul li {
+        padding: 2dvh 0.4rem;
+        font-size: 1.6rem;
     }
 }
