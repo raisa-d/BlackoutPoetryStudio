@@ -4,7 +4,7 @@
 </p>
 <p align="center">
   <a href="https://blackout-poetry.netlify.app/" target="_blank">
-    <img width="650" alt="Screenshot 2024-02-17 at 3 28 30 PM" src="https://github.com/raisa-d/BlackoutPoetryMaker/assets/144272001/302e3db6-c6d0-4b28-9633-44c6204974a9">
+    <img width="700" alt="Blackout Poetry User Interface" src="https://github.com/raisa-d/BlackoutPoetryStudio/assets/144272001/3a717e72-06cd-464a-9045-90c58ae4192f">
   </a>
 </p>
 
