@@ -33,10 +33,11 @@
 2. Search functionality to get poem by searching the database by keyword, author, etc.
 3. Save and share your poem
 4. Add an 'edit' button to edit a poem after you've blacked it out
-5. Styling
+5. Add ability for user to change font-size and font-family of poem
+6. Styling
    - add dark mode
    - make it so the words that aren't blacked out have more padding so it doesn't look weird in smaller viewport sizes
-6. Animations
+7. Animations
    - have expandable elements smoothly transition
 
 ## APIS being used
