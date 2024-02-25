@@ -215,7 +215,7 @@ main {
 
 .instructions-container {
     background: #a6849d;
-    width: 18rem;
+    width: 28rem;
     padding: 1rem;
     margin-top: 2rem;
     border-radius: 15px;
@@ -362,9 +362,21 @@ main {
     }
 }
 
+@media all and (max-widht: 650px) {
+    .instructions-container {
+        width: 18rem;
+    }
+}
+
 @media all and (max-width:550px) {
     .poem-box {
         width: 75dvw;
+    }
+}
+
+@media all and (max-width:410px) {
+    .instructions-container {
+        width: 17rem;
     }
 }
 
