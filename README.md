@@ -1,19 +1,20 @@
 <h1 align="center">Blackout Poetry Studio</h1>
 <p align="center">
-  Blackout Poetry Studio is a web app that enables users to create blackout poetry, a type of found poetry. Users begin with a base text and create a new poem by selecting which words they want to keep from the pre-existing text and then blacking out the rest.
+  Blackout Poetry Studio is a web app that enables users to create blackout poetry, a type of found poetry. 
 </p>
 <p align="center">
   <a href="https://blackout-poetry.netlify.app/" target="_blank">
     <img width="700" alt="Blackout Poetry User Interface" src="https://github.com/raisa-d/BlackoutPoetryStudio/assets/144272001/3a717e72-06cd-464a-9045-90c58ae4192f">
   </a>
 </p>
+Users begin with a pre-existing/base poem and create a new poem by selecting which words they want to keep from the pre-existing text and then blacking out the rest.
 
 ## Live Site [Here](https://blackout-poetry.netlify.app/)
 
 ## Features
 
 - **Random Poem:** Generate a random poem for creative inspiration.
-- **Search Functionality:** Find specific poems using search queries.
+- **Search Functionality:** Search for poems by title.
 - **Set Custom Text:** Add text of your own to base your found poem off of.
 - **Blackout Poetry Editor:** Craft your blackout poetry with an intuitive text editor.
 - **Save and Share:** Save your creations and share them on social media.
@@ -42,6 +43,3 @@
 
 ## APIS being used
 - [poetryDB API](https://poetrydb.org/index.html): Using this to pull the random poem from
-<p align="center">
-  Live Web App [Here](https://blackout-poetry.netlify.app/)
-</p>
