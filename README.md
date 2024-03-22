@@ -4,7 +4,7 @@
 </p>
 <p align="center">
   <a href="https://blackout-poetry.netlify.app/" target="_blank">
-    <img width="700" alt="Blackout Poetry User Interface" src="https://github.com/raisa-d/BlackoutPoetryStudio/assets/144272001/3a717e72-06cd-464a-9045-90c58ae4192f">
+    <img width="1307" alt="BlackoutPoetry Web App Across Devices" src="https://github.com/raisa-d/BlackoutPoetryStudio/assets/144272001/64c58799-963f-4aae-ac6a-112d46b01cbe">
   </a>
 </p>
 Users begin with a pre-existing/base poem and create a new poem by selecting which words they want to keep from the pre-existing text and then blacking out the rest.
