@@ -28,7 +28,6 @@
 - [Lessons Learned](#lessons-learned)
 
 ## Features
-
 - **Random Poem:** Generate a random poem for creative inspiration.
 - **Search Functionality:** Search for poems by title.
 - **Set Custom Text:** Add text of your own to base your found poem off of.
@@ -46,19 +45,28 @@
   - reset the poem so no words are blacked out or selected anymore
 
 ## Technologies Used
-<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> 
-	<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> 
+<a href="https://www.figma.com/" target="_blank" rel="noreferrer"> 
+    <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> 
 </a> 
-<a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> 
-	<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> 
-</a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> 
 </a> 
-<a href="https://www.figma.com/" target="_blank" rel="noreferrer"> 
-    <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> 
-  </a> 
-<p>I built this web app using HTML5, CSS3, and JavaScript. The web app is integrated with the RESTful <a href="https://poetrydb.org/index.html" target="_blank">poetryDB API</a>, which is what is being used to retrieve a random poem. The initial design for the web app was created using Figma.</p>
+<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> 
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> 
+</a> 
+<a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> 
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> 
+</a> 
+<a href="https://git-scm.com/" target="_blank" rel="noreferrer"> 
+  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> 
+</a>
+<ul>
+  <li>Front-end: HTML5, CSS3, JavaScript</li>
+  <li>RESTful API: <a href="https://poetrydb.org/index.html" target="_blank">poetryDB API</a></li>
+  <li>Design: Figma</li>
+  <li>Storage: Local Storage</li>
+  <li>Version Control: Git</li>
+</ul>
 
 ## Optimizations
 The following are optimizations I will make in future iterations:
