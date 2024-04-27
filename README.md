@@ -26,6 +26,7 @@
 - [Technologies Used](#technologies-used)
 - [Optimizations](#optimizations)
 - [Lessons Learned](#lessons-learned)
+- [Contact](#contact)
 
 ## Features
 - **Random Poem:** Generate a random poem for creative inspiration.
