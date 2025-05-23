@@ -9,7 +9,7 @@
 </p>
 <p align="center">
   <a href="https://blackout-poetry.netlify.app/" target="_blank">
-    <img width="1307" alt="BlackoutPoetry Web App Across Devices" src="https://github.com/raisa-d/BlackoutPoetryStudio/assets/144272001/64c58799-963f-4aae-ac6a-112d46b01cbe">
+    <img width="1307" alt="BlackoutPoetry Web App Across Devices" src="https://github.com/rai-dorzback/BlackoutPoetryStudio/assets/144272001/64c58799-963f-4aae-ac6a-112d46b01cbe">
   </a>
 </p>
 <p>Users begin with a pre-existing/base poem and create a new poem by selecting which words they want to keep from the pre-existing text and then blacking out the rest. The result is a new blackout poem.</p>
@@ -89,7 +89,7 @@ The following are optimizations I will make in future iterations:
   <a href="https://rai-dorzback.netlify.app/" target="blank">
     <img src="https://img.shields.io/badge/Website-563d7c?&style=for-the-badge" alt="Website">
   </a>
-  <a href="https://www.linkedin.com/in/raisa-d/">
+  <a href="https://www.linkedin.com/in/rai-d/">
     <img src="https://img.shields.io/badge/LinkedIn-046E6D?logo=linkedin&style=for-the-badge">
   </a>
   <a href="https://twitter.com/rai__bread" target="blank">
