@@ -92,7 +92,7 @@ The following are optimizations I will make in future iterations:
   <a href="https://www.linkedin.com/in/rai-d/">
     <img src="https://img.shields.io/badge/LinkedIn-046E6D?logo=linkedin&style=for-the-badge">
   </a>
-  <a href="https://twitter.com/rai__bread" target="blank">
-    <img src="https://img.shields.io/badge/Twitter-563d7c?logo=twitter&style=for-the-badge&logoColor=white" alt="rai__bread" />
+  <a href="https://bsky.app/profile/rai-bread.bsky.social" target="blank">
+    <img src="https://img.shields.io/badge/Bluesky-563d7c?&style=for-the-badge&logoColor=white" alt="rai__bread" />
   </a> 
 </p>
